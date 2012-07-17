@@ -1,0 +1,77 @@
+!define BLANK ""
+f:\ballsball\dlg.obj : f:\ballsball\dlg.c .AUTODEPEND
+ @f:
+ cd f:\ballsball
+ *wcc386 dlg.c -i=f:\WATCOM\h;f:\WATCOM\h\os2 -w4 -e25 -zq -od -d2 -5r -bt=o&
+s2 -mf
+
+f:\ballsball\file.obj : f:\ballsball\file.c .AUTODEPEND
+ @f:
+ cd f:\ballsball
+ *wcc386 file.c -i=f:\WATCOM\h;f:\WATCOM\h\os2 -w4 -e25 -zq -od -d2 -5r -bt=&
+os2 -mf
+
+f:\ballsball\help.obj : f:\ballsball\help.c .AUTODEPEND
+ @f:
+ cd f:\ballsball
+ *wcc386 help.c -i=f:\WATCOM\h;f:\WATCOM\h\os2 -w4 -e25 -zq -od -d2 -5r -bt=&
+os2 -mf
+
+f:\ballsball\init.obj : f:\ballsball\init.c .AUTODEPEND
+ @f:
+ cd f:\ballsball
+ *wcc386 init.c -i=f:\WATCOM\h;f:\WATCOM\h\os2 -w4 -e25 -zq -od -d2 -5r -bt=&
+os2 -mf
+
+f:\ballsball\main.obj : f:\ballsball\main.c .AUTODEPEND
+ @f:
+ cd f:\ballsball
+ *wcc386 main.c -i=f:\WATCOM\h;f:\WATCOM\h\os2 -w4 -e25 -zq -od -d2 -5r -bt=&
+os2 -mf
+
+f:\ballsball\menu.obj : f:\ballsball\menu.c .AUTODEPEND
+ @f:
+ cd f:\ballsball
+ *wcc386 menu.c -i=f:\WATCOM\h;f:\WATCOM\h\os2 -w4 -e25 -zq -od -d2 -5r -bt=&
+os2 -mf
+
+f:\ballsball\move.obj : f:\ballsball\move.c .AUTODEPEND
+ @f:
+ cd f:\ballsball
+ *wcc386 move.c -i=f:\WATCOM\h;f:\WATCOM\h\os2 -w4 -e25 -zq -od -d2 -5r -bt=&
+os2 -mf
+
+f:\ballsball\pnt.obj : f:\ballsball\pnt.c .AUTODEPEND
+ @f:
+ cd f:\ballsball
+ *wcc386 pnt.c -i=f:\WATCOM\h;f:\WATCOM\h\os2 -w4 -e25 -zq -od -d2 -5r -bt=o&
+s2 -mf
+
+f:\ballsball\main.res : f:\ballsball\main.rc .AUTODEPEND
+ @f:
+ cd f:\ballsball
+ rc -i $[: -i f:\WATCOM\h -i f:\WATCOM\h\os2 -r main.rc main.res
+
+f:\ballsball\bb.exe : f:\ballsball\dlg.obj f:\ballsball\file.obj f:\ballsbal&
+l\help.obj f:\ballsball\init.obj f:\ballsball\main.obj f:\ballsball\menu.obj&
+ f:\ballsball\move.obj f:\ballsball\pnt.obj f:\ballsball\dlg.h f:\ballsball\&
+game.h f:\ballsball\help.h f:\ballsball\main.h f:\ballsball\xtrn.h f:\ballsb&
+all\bbhelp.ipf f:\ballsball\main.res f:\ballsball\bball.txt f:\ballsball\his&
+tory.txt f:\ballsball\license.txt f:\ballsball\readme.txt .AUTODEPEND
+ @f:
+ cd f:\ballsball
+ @%write bb.lk1 FIL dlg.obj,file.obj,help.obj,init.obj,main.obj,menu.obj,mov&
+e.obj,pnt.obj
+ @%append bb.lk1 
+!ifneq BLANK ""
+ *wlib -q -n -b bb.imp 
+ @%append bb.lk1 LIBR bb.imp
+!endif
+ *wlink name bb d all SYS os2v2 pm op m op maxe=25 op q op symf @bb.lk1
+!ifneq BLANK "main.res"
+ rc -i $[: -i f:\WATCOM\h -i f:\WATCOM\h\os2 main.res bb.exe
+!endif
+ ipfc bbhelp.ipf /w3
+ 
+ 
+

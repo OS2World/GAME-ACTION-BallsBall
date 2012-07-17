@@ -1,0 +1,151 @@
+/**************************************************************************
+ *  File name  :  main.rc
+ *
+ *  Description:  This resource file contains the menu and string
+ *                table definitions.
+ *
+ *  Concepts   :  resource script
+ *
+ *  API's      :  [none]
+ *
+ *  Required
+ *    Files    :  OS2.H, MAIN.H, DLG.H
+ *************************************************************************/
+#include <os2.h>
+#include "main.h"
+#include "dlg.h"
+
+ICON IDR_MAIN "bbicon.ico"
+
+MENU IDR_MAIN
+{
+    SUBMENU     "~Spel", IDM_FILE, MIS_TEXT
+    {
+        MENUITEM    "~Nieuw",        IDM_FILENEW,    MIS_TEXT
+        MENUITEM    "~Openen...",       IDM_FILEOPEN,   MIS_TEXT
+        MENUITEM SEPARATOR
+        MENUITEM    "O~pslaan",       IDM_FILESAVE,   MIS_TEXT
+        MENUITEM    "Op~slaan als...", IDM_FILESAVEAS, MIS_TEXT
+        MENUITEM SEPARATOR
+        MENUITEM    "Start/~Pause   Enter", IDM_DIRECTION_START,    MIS_TEXT
+        MENUITEM SEPARATOR
+        MENUITEM    "~Eregalerij",IDM_HIGHSCORES,   MIS_TEXT
+        MENUITEM SEPARATOR
+        MENUITEM    "~Afsluiten       Esc", IDM_FILEEXIT,   MIS_TEXT
+    }
+
+    SUBMENU     "~Instellingen",            IDM_SETTINGS,     MIS_TEXT
+    {
+        SUBMENU "~Geluid",               IDM_SOUND,        MIS_TEXT
+           BEGIN
+           MENUITEM "~Aan",              IDM_SOUND_ON,     MIS_TEXT
+           MENUITEM "~Uit",             IDM_SOUND_OFF,    MIS_TEXT
+           END
+        SUBMENU "~Weergave",               IDM_STYLE,        MIS_TEXT
+           BEGIN
+           MENUITEM "~2D    F2",        IDM_STYLE_2D,     MIS_TEXT
+           MENUITEM "~3D    F3",        IDM_STYLE_3D,     MIS_TEXT
+           END
+        SUBMENU "~Niveau",               IDM_LEVEL,        MIS_TEXT
+           BEGIN
+           MENUITEM "0",                IDM_LEVEL_0,      MIS_TEXT
+           MENUITEM "1",                IDM_LEVEL_1,      MIS_TEXT
+           MENUITEM "2",                IDM_LEVEL_2,      MIS_TEXT
+           MENUITEM "3",                IDM_LEVEL_3,      MIS_TEXT
+           MENUITEM "4",                IDM_LEVEL_4,      MIS_TEXT
+           MENUITEM "5",                IDM_LEVEL_5,      MIS_TEXT
+           MENUITEM "6",                IDM_LEVEL_6,      MIS_TEXT | MIS_BREAK
+           MENUITEM "7",                IDM_LEVEL_7,      MIS_TEXT
+           MENUITEM "8",                IDM_LEVEL_8,      MIS_TEXT
+           MENUITEM "9",                IDM_LEVEL_9,      MIS_TEXT
+           MENUITEM "10",               IDM_LEVEL_10,     MIS_TEXT
+           MENUITEM "11",               IDM_LEVEL_11,     MIS_TEXT
+           END
+
+        MENUITEM SEPARATOR
+        MENUITEM    "~Alle instellingen",    IDM_SETTINGS_ALL, MIS_TEXT
+    }
+
+/* Application specific menus go here. */
+    SUBMENU     "~Help",    IDM_HELP,   MIS_TEXT
+    {
+        MENUITEM    "~Help",     IDM_HELPGENERAL,    MIS_TEXT
+        MENUITEM    "Help-~index",       IDM_HELPINDEX,      MIS_TEXT
+        MENUITEM    "Help ~gebruiken",       IDM_HELPUSINGHELP,  MIS_TEXT
+        MENUITEM    "Help bij ~toetsen",        IDM_HELPKEYS,       MIS_TEXT
+        MENUITEM SEPARATOR
+        MENUITEM    "Inf~o",  IDM_HELPPRODUCTINFO, MIS_TEXT
+    }
+}
+
+/*Popup Menu*/
+MENU POPUP_MENU
+{
+   MENUITEM    "~Nieuw spel",        IDM_FILENEW,    MIS_TEXT
+   MENUITEM    "~Open spel",       IDM_FILEOPEN,   MIS_TEXT
+   MENUITEM    "Op~slaan spel",       IDM_FILESAVE,   MIS_TEXT
+   MENUITEM SEPARATOR
+   MENUITEM    "Start/~Pause",     IDM_DIRECTION_START,    MIS_TEXT
+   MENUITEM SEPARATOR
+   MENUITEM "~Geluid aan",           IDM_SOUND_ON,   MIS_TEXT
+   MENUITEM "Geluid ~uit",          IDM_SOUND_OFF,  MIS_TEXT
+   MENUITEM SEPARATOR
+   MENUITEM    "~Afsluiten",   IDM_FILEEXIT,   MIS_TEXT
+}
+
+ACCELTABLE IDR_MAIN
+{
+    VK_BACKSPACE,   IDM_FILEEXIT,      VIRTUALKEY,    ALT
+    VK_DELETE,      IDM_FILEEXIT,      VIRTUALKEY,    SHIFT
+    VK_INSERT,      IDM_FILEEXIT,      VIRTUALKEY,    CONTROL
+    VK_INSERT,      IDM_FILEEXIT,      VIRTUALKEY,    SHIFT
+    VK_DELETE,      IDM_FILEEXIT,      VIRTUALKEY
+}
+
+STRINGTABLE
+{
+    IDS_APPNAME                 "Vangbal"
+    IDS_FILEOPENEXT             "*.bbg"
+    IDS_HELPLIBRARYNAME         "BBHELP.HLP"
+    IDS_OPEN                    "Open spel"
+    IDS_HELPWINDOWTITLE         "Vangbal Help"
+    IDS_SAVE                    "Opslaan spel"
+    IDS_UNTITLED                "Naamloos"
+    IDS_TITLEBARSEPARATOR       " - "
+    IDS_OBJECTCLASS             "Object Klasse"
+}
+
+MESSAGETABLE
+{
+    IDMSG_INITFAILED            "Initialisatie mislukt."
+    IDMSG_MAINWINCREATEFAILED   "Kan geen hoofdvenster maken."
+    IDMSG_CANNOTOPENINPUTFILE   "Ongeldig bestand."
+    IDMSG_CANNOTRUNSETTINGS     "Kan instellingen venster niet tonen."
+    IDMSG_CANNOTGETHPS          "Kan geen HPS voor het venster krijgen."
+    IDMSG_HELPLOADERROR         "Kan helptekst niet laden."
+    IDMSG_CANNOTLOADSTRING      "Kan tekst niet laden."
+    IDMSG_CONGRATULATIONS  	  "Gefeliciteerd! Je hebt gewonnen."
+    IDMSG_OK                    "Heel goed! Je gaat naar het volgende niveau."
+    IDMSG_SORRY                 "Het spijt me! Je hebt verloren."
+    IDMSG_SAVE                  "Wil je dit spel opslaan?"
+    IDMSG_HELPDISPLAYERROR      "Kan helpvenster niet tonen."
+    IDMSG_CANNOTLOADEXITLIST    "Kan het programma niet afsluiten."
+    IDMSG_OVERWRITEFILE         "Het bestand bestaat reeds.  Wil je het overschrijven?"
+    IDMSG_CANNOTGETFILEINFO     "Kan bestandsinformatie niet lezen."
+    IDMSG_CANNOTALLOCATEMEMORY  "Niet genoeg geheugen."
+    IDMSG_CANNOTREADFILE        "Kan bestand niet lezen."
+    IDMSG_CANNOTWRITETOFILE     "Kan bestand niet schrijven."
+    IDMSG_CANNOTLOADSETTINGS    "Kan de instellingen niet laden."
+    IDMSG_CANNOTLOADHSCORES     "Kan de hoogste punten aantallen niet laden."
+    IDMSG_CANNOTWRITESETTINGS   "Kan de instellingen niet bewaren."
+    IDMSG_BETWEENBMP            "Grootte van de cel moet liggen tussen 6 en 12."
+    IDMSG_BETWEENCOL            "Kolom grootte moet liggen tussen 50 en 100."
+    IDMSG_BETWEENROW            "Rij grootte moet liggen tussen 30 en 60"
+    IDMSG_MUSTDIFFERENT         "Elk type veld moeten een andere kleur hebben."
+    IDMSG_YOURTUTORIAL          "Je uitleg kan deze boodschap vervangen."
+}
+/* include dialog templates created by dialog editor */
+rcinclude dialogs.dlg
+rcinclude help.rc
+/***************************  End of main.rc ****************************/
+

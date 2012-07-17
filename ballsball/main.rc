@@ -1,0 +1,151 @@
+/**************************************************************************
+ *  File name  :  main.rc
+ *
+ *  Description:  This resource file contains the menu and string
+ *                table definitions.
+ *
+ *  Concepts   :  resource script
+ *
+ *  API's      :  [none]
+ *
+ *  Required
+ *    Files    :  OS2.H, MAIN.H, DLG.H
+ *************************************************************************/
+#include <os2.h>
+#include "main.h"
+#include "dlg.h"
+
+ICON IDR_MAIN "bbicon.ico"
+
+MENU IDR_MAIN
+{
+    SUBMENU     "~File", IDM_FILE, MIS_TEXT
+    {
+        MENUITEM    "~New Game",        IDM_FILENEW,    MIS_TEXT
+        MENUITEM    "~Load Game",       IDM_FILEOPEN,   MIS_TEXT
+        MENUITEM SEPARATOR
+        MENUITEM    "~Save Game",       IDM_FILESAVE,   MIS_TEXT
+        MENUITEM    "Save Game ~as...", IDM_FILESAVEAS, MIS_TEXT
+        MENUITEM SEPARATOR
+        MENUITEM    "Start/~Pause   Enter", IDM_DIRECTION_START,    MIS_TEXT
+        MENUITEM SEPARATOR
+        MENUITEM    "Sho~w High Scores",IDM_HIGHSCORES,   MIS_TEXT
+        MENUITEM SEPARATOR
+        MENUITEM    "E~xit            Esc", IDM_FILEEXIT,   MIS_TEXT
+    }
+
+    SUBMENU     "S~ettings",            IDM_SETTINGS,     MIS_TEXT
+    {
+        SUBMENU "S~ound",               IDM_SOUND,        MIS_TEXT
+           BEGIN
+           MENUITEM "O~n",              IDM_SOUND_ON,     MIS_TEXT
+           MENUITEM "O~ff",             IDM_SOUND_OFF,    MIS_TEXT
+           END
+        SUBMENU "St~yle",               IDM_STYLE,        MIS_TEXT
+           BEGIN
+           MENUITEM "~2D    F2",        IDM_STYLE_2D,     MIS_TEXT
+           MENUITEM "~3D    F3",        IDM_STYLE_3D,     MIS_TEXT
+           END
+        SUBMENU "Le~vel",               IDM_LEVEL,        MIS_TEXT
+           BEGIN
+           MENUITEM "0",                IDM_LEVEL_0,      MIS_TEXT
+           MENUITEM "1",                IDM_LEVEL_1,      MIS_TEXT
+           MENUITEM "2",                IDM_LEVEL_2,      MIS_TEXT
+           MENUITEM "3",                IDM_LEVEL_3,      MIS_TEXT
+           MENUITEM "4",                IDM_LEVEL_4,      MIS_TEXT
+           MENUITEM "5",                IDM_LEVEL_5,      MIS_TEXT
+           MENUITEM "6",                IDM_LEVEL_6,      MIS_TEXT | MIS_BREAK
+           MENUITEM "7",                IDM_LEVEL_7,      MIS_TEXT
+           MENUITEM "8",                IDM_LEVEL_8,      MIS_TEXT
+           MENUITEM "9",                IDM_LEVEL_9,      MIS_TEXT
+           MENUITEM "10",               IDM_LEVEL_10,     MIS_TEXT
+           MENUITEM "11",               IDM_LEVEL_11,     MIS_TEXT
+           END
+
+        MENUITEM SEPARATOR
+        MENUITEM    "All Se~ttings",    IDM_SETTINGS_ALL, MIS_TEXT
+    }
+
+/* Application specific menus go here. */
+    SUBMENU     "~Help",    IDM_HELP,   MIS_TEXT
+    {
+        MENUITEM    "~General help",     IDM_HELPGENERAL,    MIS_TEXT
+        MENUITEM    "Help ~index",       IDM_HELPINDEX,      MIS_TEXT
+        MENUITEM    "~Using help",       IDM_HELPUSINGHELP,  MIS_TEXT
+        MENUITEM    "~Keys help",        IDM_HELPKEYS,       MIS_TEXT
+        MENUITEM SEPARATOR
+        MENUITEM    "P~roduct information",  IDM_HELPPRODUCTINFO, MIS_TEXT
+    }
+}
+
+/*Popup Menu*/
+MENU POPUP_MENU
+{
+   MENUITEM    "~New Game",        IDM_FILENEW,    MIS_TEXT
+   MENUITEM    "~Load Game",       IDM_FILEOPEN,   MIS_TEXT
+   MENUITEM    "~Save Game",       IDM_FILESAVE,   MIS_TEXT
+   MENUITEM SEPARATOR
+   MENUITEM    "~Start/Pause",     IDM_DIRECTION_START,    MIS_TEXT
+   MENUITEM SEPARATOR
+   MENUITEM "Sound O~n",           IDM_SOUND_ON,   MIS_TEXT
+   MENUITEM "Sound O~ff",          IDM_SOUND_OFF,  MIS_TEXT
+   MENUITEM SEPARATOR
+   MENUITEM    "E~xit",   IDM_FILEEXIT,   MIS_TEXT
+}
+
+ACCELTABLE IDR_MAIN
+{
+    VK_BACKSPACE,   IDM_FILEEXIT,      VIRTUALKEY,    ALT
+    VK_DELETE,      IDM_FILEEXIT,      VIRTUALKEY,    SHIFT
+    VK_INSERT,      IDM_FILEEXIT,      VIRTUALKEY,    CONTROL
+    VK_INSERT,      IDM_FILEEXIT,      VIRTUALKEY,    SHIFT
+    VK_DELETE,      IDM_FILEEXIT,      VIRTUALKEY
+}
+
+STRINGTABLE
+{
+    IDS_APPNAME                 "BallsBall Game"
+    IDS_FILEOPENEXT             "*.bbg"
+    IDS_HELPLIBRARYNAME         "BBHELP.HLP"
+    IDS_OPEN                    "Load Game"
+    IDS_HELPWINDOWTITLE         "BallsBall Help"
+    IDS_SAVE                    "Save Game"
+    IDS_UNTITLED                "Untitled"
+    IDS_TITLEBARSEPARATOR       " - "
+    IDS_OBJECTCLASS             "Object Class"
+}
+
+MESSAGETABLE
+{
+    IDMSG_INITFAILED            "Initialization failed."
+    IDMSG_MAINWINCREATEFAILED   "Failed to create main window."
+    IDMSG_CANNOTOPENINPUTFILE   "Invalid input file."
+    IDMSG_CANNOTRUNSETTINGS     "Cannot run Settings dialog."
+    IDMSG_CANNOTGETHPS          "Cannot get HPS for window."
+    IDMSG_HELPLOADERROR         "Failed to load help manager."
+    IDMSG_CANNOTLOADSTRING      "Failed to load string."
+    IDMSG_CONGRATULATIONS  	  "Congratulations! You win!"
+    IDMSG_OK                    "OK! You reach next Level."
+    IDMSG_SORRY                 "Sorry! You have lost."
+    IDMSG_SAVE                  "Do you want to save this game?"
+    IDMSG_HELPDISPLAYERROR      "Failed to display help panel."
+    IDMSG_CANNOTLOADEXITLIST    "Cannot load Exit List processor."
+    IDMSG_OVERWRITEFILE         "The file exists.  Do you want to overwrite it?"
+    IDMSG_CANNOTGETFILEINFO     "Error getting file information."
+    IDMSG_CANNOTALLOCATEMEMORY  "Not enough memory."
+    IDMSG_CANNOTREADFILE        "Error reading file."
+    IDMSG_CANNOTWRITETOFILE     "Error writing file."
+    IDMSG_CANNOTLOADSETTINGS    "Cannot load game settings."
+    IDMSG_CANNOTLOADHSCORES     "Cannot load High Scores."
+    IDMSG_CANNOTWRITESETTINGS   "Cannot write game settings to disk."
+    IDMSG_BETWEENBMP            "Size of Cell Value must by between 6 and 12"
+    IDMSG_BETWEENCOL            "Columns Value must by between 50 and 100"
+    IDMSG_BETWEENROW            "Rows Value must by between 30 and 60"
+    IDMSG_MUSTDIFFERENT         "Colors of the Cells of the different types must by different."
+    IDMSG_YOURTUTORIAL          "Your tutorial can replace this message."
+}
+/* include dialog templates created by dialog editor */
+rcinclude dialogs.dlg
+rcinclude help.rc
+/***************************  End of main.rc ****************************/
+

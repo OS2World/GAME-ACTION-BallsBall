@@ -1,0 +1,6 @@
+!define BLANK ""
+f:\ballsball\bbhelp.hlp : f:\ballsball\bbhelp.ipf
+ @f:
+ cd f:\ballsball
+ ipfc  /W3 bbhelp.ipf
+
