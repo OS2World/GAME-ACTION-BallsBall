@@ -1,0 +1,191 @@
+/* French dialog templates for namespace +40000.
+ *
+ * Dialog template ids are the base ids from dlg.h shifted by
+ * LANG_BASE_FR (40000); control ids are unchanged (they are scoped
+ * within their dialog).  All texts are pure ASCII (no accents).
+ *
+ * This file is rcinclude'd from main.rc, so it must not re-include
+ * OS2.H/DLG.H again (already present from main.rc and help.rc scope).
+ */
+
+//prodinfo
+
+DLGTEMPLATE 40007 MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG "A propos de ce programme", 40007, 132, 42, 277, 169,
+                FS_DLGBORDER | WS_VISIBLE, FCF_TITLEBAR | FCF_SYSMENU
+    BEGIN
+        CONTROL IDR_BITMAP,            IDA_BITMAP, 1, 18, 275, 150, WC_STATIC,
+                                            SS_BITMAP | WS_GROUP | WS_VISIBLE
+        CONTROL "OK",                  DID_OK, 1, 1, 275, 16, WC_BUTTON,
+                                            BS_PUSHBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+    END
+END
+
+//french high scores - enter name
+
+DLGTEMPLATE 40256
+BEGIN
+    DIALOG "Entrez votre nom", 40256, 100, 50, 200, 91, FS_NOBYTEALIGN |
+                FS_DLGBORDER | WS_CLIPSIBLINGS | WS_SAVEBITS | WS_VISIBLE,
+                FCF_TITLEBAR | FCF_SYSMENU
+    PRESPARAMS PP_USER, "10.System Proportional"
+    BEGIN
+        CONTROL "",                    EF_ENTRYNAME, 16, 36, 168, 10,
+                                            WC_ENTRYFIELD, ES_MARGIN |
+                                            WS_TABSTOP | WS_VISIBLE
+        CONTROL "OK",                  DID_OK, 70, 10, 60, 15, WC_BUTTON,
+                                            BS_PUSHBUTTON | BS_DEFAULT |
+                                            WS_GROUP | WS_TABSTOP | WS_VISIBLE
+        CONTROL "Felicitations! Vous etes dans le Top Ten.", ST_TOPTEN,
+                                        15, 70, 170, 12, WC_STATIC, SS_TEXT |
+                                            DT_CENTER | DT_VCENTER | WS_GROUP |
+                                            WS_VISIBLE
+        CONTROL "Votre nom pour le tableau des champions:", ST_ENTRYNAME,
+                                        20, 53, 160, 11, WC_STATIC, SS_TEXT |
+                                            DT_CENTER | WS_GROUP | WS_VISIBLE
+    END
+END
+
+//french high scores
+
+DLGTEMPLATE 40300
+BEGIN
+    DIALOG "Tableau des champions", 40300, 60, 25, 270, 151, FS_NOBYTEALIGN |
+                FS_DLGBORDER | WS_CLIPSIBLINGS | WS_SAVEBITS | WS_VISIBLE,
+                FCF_TITLEBAR | FCF_SYSMENU
+    PRESPARAMS PP_USER, "10.System Proportional"
+    BEGIN
+        CONTROL "OK",               DID_OK, 119, 10, 60, 12, WC_BUTTON,
+                                            BS_PUSHBUTTON | BS_DEFAULT |
+                                            WS_GROUP | WS_TABSTOP | WS_VISIBLE
+        CONTROL "Bienvenue au tableau des champions!", ST_WELCOME, 50, 133, 170, 12,
+                                            WC_STATIC, SS_TEXT | DT_CENTER |
+                                            DT_VCENTER | WS_GROUP | WS_VISIBLE
+                PRESPARAMS PP_FOREGROUNDCOLORINDEX, CLR_RED
+        CONTROL "",                    LB_NAMES, 10, 30, 180, 84, WC_LISTBOX,
+                                            LS_NOADJUSTPOS | WS_VISIBLE
+        CONTROL "",                    LB_SCORES, 200, 30, 60, 84, WC_LISTBOX,
+                                            LS_NOADJUSTPOS | WS_VISIBLE
+        CONTROL "Nom",            ST_CHAMPIONS, 10, 115, 51, 10, WC_STATIC,
+                                            SS_TEXT | DT_VCENTER | WS_GROUP |
+                                            WS_VISIBLE
+        CONTROL "Points",              ST_SCORES, 200, 115, 31, 10, WC_STATIC,
+                                            SS_TEXT | DT_VCENTER | WS_GROUP |
+                                            WS_VISIBLE
+    END
+END
+
+//french settings
+
+DLGTEMPLATE 40400
+BEGIN
+    DIALOG "Options", 40400, 50, 25, 285, 171, FS_NOBYTEALIGN |
+                FS_DLGBORDER | WS_CLIPSIBLINGS | WS_SAVEBITS | WS_VISIBLE,
+                FCF_TITLEBAR | FCF_SYSMENU
+    PRESPARAMS PP_USER, "10.System Proportional"
+    BEGIN
+        CONTROL "OK",                  DID_OK, 8, 22, 60, 14, WC_BUTTON,
+                                            BS_PUSHBUTTON | BS_DEFAULT |
+                                            WS_GROUP | WS_TABSTOP | WS_VISIBLE
+        CONTROL "Annuler",             DID_CANCEL, 8, 5, 60, 14, WC_BUTTON,
+                                            BS_PUSHBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "Par defaut",          PB_DEFAULT, 75, 22, 60, 14, WC_BUTTON,
+                                            BS_PUSHBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "Couleurs",            GB_COLORS, 8, 64, 270, 104, WC_STATIC,
+                                            SS_GROUPBOX | WS_GROUP | WS_VISIBLE
+        CONTROL "Coureur",             RB_RUNNER, 16, 149, 52, 10, WC_BUTTON,
+                                            BS_AUTORADIOBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "Chasseurs",           RB_HUNTERS, 16, 139, 52, 10, WC_BUTTON,
+                                            BS_AUTORADIOBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "Balles",              RB_BALLS, 16, 129, 45, 10, WC_BUTTON,
+                                            BS_AUTORADIOBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "Champ",               RB_FIELD, 16, 119, 40, 10, WC_BUTTON,
+                                            BS_AUTORADIOBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "Chemins",             RB_WAYS, 16, 109, 40, 10, WC_BUTTON,
+                                            BS_AUTORADIOBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "Nouveaux chemins",    RB_NEWWAYS, 16, 99, 75, 10, WC_BUTTON,
+                                            BS_AUTORADIOBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "Chemins casses",      RB_BREAKWAYS, 16, 89, 75, 10, WC_BUTTON,
+                                            BS_AUTORADIOBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "Fond du texte",       RB_TEXTBACK, 16, 79, 85, 11, WC_BUTTON,
+                                            BS_AUTORADIOBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "Texte",               RB_TEXTFORE, 16, 69, 83, 10, WC_BUTTON,
+                                            BS_AUTORADIOBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "Bleu",                PB_BLUE, 99, 147, 55, 12, WC_BUTTON,
+                                            BS_PUSHBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+                PRESPARAMS PP_BACKGROUNDCOLORINDEX, CLR_BLUE
+        CONTROL "Cyan",                PB_CYAN, 99, 134, 55, 12, WC_BUTTON,
+                                            BS_PUSHBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+                PRESPARAMS PP_BACKGROUNDCOLORINDEX, CLR_CYAN
+        CONTROL "Gris",                PB_GRAY, 99, 121, 55, 12, WC_BUTTON,
+                                            BS_PUSHBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+                PRESPARAMS PP_BACKGROUNDCOLORINDEX, CLR_PALEGRAY
+        CONTROL "Vert",                PB_GREEN, 99, 108, 55, 12, WC_BUTTON,
+                                            BS_PUSHBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+                PRESPARAMS PP_BACKGROUNDCOLORINDEX, CLR_GREEN
+        CONTROL "Rose",                PB_PINK, 99, 95, 55, 12, WC_BUTTON,
+                                            BS_PUSHBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+                PRESPARAMS PP_BACKGROUNDCOLORINDEX, CLR_PINK
+        CONTROL "Rouge",               PB_RED, 99, 82, 55, 12, WC_BUTTON,
+                                            BS_PUSHBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+                PRESPARAMS PP_BACKGROUNDCOLORINDEX, CLR_RED
+        CONTROL "Jaune",               PB_YELLOW, 99, 69, 55, 12, WC_BUTTON,
+                                            BS_PUSHBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+                PRESPARAMS PP_BACKGROUNDCOLORINDEX, CLR_YELLOW
+        CONTROL "Exemple",             GB_SAMPLE, 156, 69, 115, 94, WC_STATIC,
+                                            SS_GROUPBOX | WS_GROUP | WS_VISIBLE
+        CONTROL "Cellules",            GB_CELLS, 8, 40, 270, 22, WC_STATIC,
+                                            SS_GROUPBOX | WS_GROUP | WS_VISIBLE
+        CONTROL "",                    EF_BMPSIZE, 70, 45, 28, 8, WC_ENTRYFIELD,
+                                            ES_MARGIN | WS_TABSTOP | WS_VISIBLE
+                CTLDATA 8, 32, 0, 0
+        CONTROL "Cellule:",            ST_SIZE, 12, 44, 54, 8, WC_STATIC,
+                                            SS_TEXT | WS_GROUP | WS_VISIBLE
+        CONTROL "",                    EF_COL, 157, 45, 28, 8, WC_ENTRYFIELD,
+                                            ES_MARGIN | WS_TABSTOP | WS_VISIBLE
+                CTLDATA 8, 32, 0, 0
+        CONTROL "Colonnes:",           ST_COLUMNS, 114, 44, 37, 8, WC_STATIC,
+                                            SS_TEXT | WS_GROUP | WS_VISIBLE
+        CONTROL "",                    EF_ROW, 241, 45, 28, 8, WC_ENTRYFIELD,
+                                            ES_MARGIN | WS_TABSTOP | WS_VISIBLE
+                CTLDATA 8, 32, 0, 0
+        CONTROL "Lignes:",             ST_ROWS, 210, 44, 28, 8, WC_STATIC,
+                                            SS_TEXT | WS_GROUP | WS_VISIBLE
+        CONTROL "Style",               GB_STYLE, 141, 5, 42, 33, WC_STATIC,
+                                            SS_GROUPBOX | WS_GROUP | WS_VISIBLE
+        CONTROL "2D",                  RB_2D, 147, 20, 25, 10, WC_BUTTON,
+                                            BS_AUTORADIOBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "3D",                  RB_3D, 147, 9, 23, 10, WC_BUTTON,
+                                            BS_AUTORADIOBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "Autres",              GB_OTHER, 191, 5, 87, 33, WC_STATIC,
+                                            SS_GROUPBOX | WS_GROUP | WS_VISIBLE
+        CONTROL "Son",                 CB_SOUND, 197, 20, 42, 10, WC_BUTTON,
+                                            BS_AUTOCHECKBOX | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "Arreter en pause",    CB_HALT, 197, 9, 75, 10, WC_BUTTON,
+                                            BS_AUTOCHECKBOX | WS_TABSTOP |
+                                            WS_VISIBLE
+    END
+END

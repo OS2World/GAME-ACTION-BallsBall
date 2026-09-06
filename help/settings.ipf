@@ -23,6 +23,9 @@ appear in the Settings menu&colon.
 :pd.You can set Level you like
 :pt.All Settings
 :pd.Shows Dialog with all avialable settings.
+:pt.Language
+:pd.Selects the interface language: English, Nederlands, Espanol,
+Deutsch or Francais. All five languages are built into the program.
 :eparml.
 
 .*--------------------------------------------------------------*\
@@ -63,4 +66,7 @@ commands.
 of different types, size of Cells and Window, set style, sound
 and mode of moving after capture. Also you can set default
 settings.
+:p.The game window is automatically enlarged, if the desktop
+allows it, so the field reaches at least 1024x768; the cells stay
+square and the window is never made larger than the desktop.
 

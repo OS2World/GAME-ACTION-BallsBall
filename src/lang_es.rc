@@ -1,0 +1,94 @@
+/**************************************************************************
+ *
+ *  File name  :  lang_es.rc
+ *
+ *  Description:  Spanish language resource tables (namespace +20000).
+ *		  Pure ASCII text (no accented characters), resource ids
+ *		  are the base ids from main.h/dlg.h shifted by
+ *		  LANG_BASE_ES (20000) so a single executable can carry
+ *		  all three languages.
+ *
+ *		  This file is rcinclude'd from main.rc, so it must
+ *		  not re-include OS2.H/MAIN.H/DLG.H by itself.
+ *
+ *  Concepts   :  multilingual single-executable resources
+ *
+ ***********************************************************************/
+
+STRINGTABLE
+{
+    20001   "*.bbg"              /* IDS_FILEOPENEXT      */
+    20002   "BallsBall"          /* IDS_APPNAME          */
+    20004   "Abrir juego"        /* IDS_OPEN             */
+    20006   "Guardar juego"      /* IDS_SAVE             */
+    20007   "Sin titulo"         /* IDS_UNTITLED         */
+    20008   " - "                /* IDS_TITLEBARSEPARATOR*/
+    20009   "Objeto"             /* IDS_OBJECTCLASS      */
+    20020   "~Archivo"           /* IDS_MEN_FILE         */
+    20021   "~Nuevo Juego"       /* IDS_MEN_NEW          */
+    20022   "~Abrir..."          /* IDS_MEN_LOAD         */
+    20023   "~Guardar"           /* IDS_MEN_SAVE         */
+    20024   "Guardar ~como..."   /* IDS_MEN_SAVEAS       */
+    20025   "Iniciar/~Pausar   Enter" /* IDS_MEN_START   */
+    20026   "~Ver Marcas"        /* IDS_MEN_HSCORES      */
+    20027   "~Salir            Esc" /* IDS_MEN_EXIT      */
+    20028   "~Configuracion"     /* IDS_MEN_SETTINGS     */
+    20029   "~Sonido"            /* IDS_MEN_SOUND        */
+    20030   "~Activado"          /* IDS_MEN_SOUNDON      */
+    20031   "~Desactivado"       /* IDS_MEN_SOUNDOFF     */
+    20032   "~Estilo"            /* IDS_MEN_STYLE        */
+    20033   "~2D    F2"          /* IDS_MEN_STYLE2D      */
+    20034   "~3D    F3"          /* IDS_MEN_STYLE3D      */
+    20035   "~Nivel"             /* IDS_MEN_LEVEL        */
+    20036   "~Idioma"            /* IDS_MEN_LANGUAGE     */
+    20037   "~Ingles"            /* IDS_MEN_LANG_EN      */
+    20038   "~Holandes"          /* IDS_MEN_LANG_NL      */
+    20039   "Es~panol"           /* IDS_MEN_LANG_ES      */
+    20040   "~Todas las Opciones" /* IDS_MEN_SETTINGS_ALL*/
+    20041   "~Ayuda"             /* IDS_MEN_HELP         */
+    20042   "~Ayuda general"     /* IDS_MEN_HELPGENERAL  */
+    20043   "Ayuda al ~indice"   /* IDS_MEN_HELPINDEX    */
+    20044   "~Usar la Ayuda"     /* IDS_MEN_HELPUSING    */
+    20045   "Ayuda de ~teclas"   /* IDS_MEN_HELPKEYS     */
+    20046   "~Informacion del producto" /* IDS_MEN_HELPPROD */
+    20050   "Tiempo-%d "        /* IDS_FMT_TIME         */
+    20051   "Nivel-%d "         /* IDS_FMT_LEVEL        */
+    20052   "Puntos-%d(%d%%)      " /* IDS_FMT_SCORE     */
+    20053   "Tiempo-0"          /* IDS_PREV_TIME        */
+    20054   "Sin nombre"        /* IDS_NONAME           */
+    20055   " - ganador!"       /* IDS_WINNER           */
+    20056   "Aviso"             /* IDS_TITLE_WARNING    */
+}
+
+MESSAGETABLE
+{
+    20001   "No se pudo inicializar."
+    20002   "No se pudo crear la ventana principal."
+    20003   "Archivo de entrada no valido."
+    20008   "No se pudo mostrar el dialogo de Configuracion."
+    20009   "No se pudo obtener un HPS para la ventana."
+    20010   "No se pudo cargar la ayuda."
+    20011   "No se pudo cargar el texto."
+    20012   "Felicidades! Has ganado!"
+    20013   "Muy bien! Pasas al siguiente nivel."
+    20014   "Lo siento. Has perdido."
+    20015   "Desea guardar esta partida?"
+    20016   "No se pudo mostrar el panel de ayuda."
+    20017   "No se pudo salir del programa."
+    20018   "El archivo ya existe.  Desea sobrescribirlo?"
+    20019   "No se pudo obtener informacion del archivo."
+    20020   "Memoria insuficiente."
+    20021   "No se pudo leer el archivo."
+    20022   "No se pudo escribir el archivo."
+    20023   "No se pudo cargar la configuracion."
+    20024   "No se pudieron cargar las marcas."
+    20025   "No se pudo guardar la configuracion."
+    20026   "El tamano de las celdas debe estar entre 6 y 12."
+    20027   "Las columnas deben estar entre 50 y 100."
+    20028   "Las filas deben estar entre 30 y 60."
+    20029   "Los colores de los distintos tipos de celda deben ser diferentes."
+    20074   "Su tutorial puede sustituir este mensaje."
+}
+
+/* Spanish dialog templates are rcinclude'd from main.rc (dialogs.es.dlg). */
+/***************************  End of lang_es.rc *************************/

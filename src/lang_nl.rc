@@ -1,0 +1,93 @@
+/**************************************************************************
+ *
+ *  File name  :  lang_nl.rc
+ *
+ *  Description:  Dutch language resource tables (namespace +10000).
+ *		  Pure ASCII text, resource ids are the base ids from
+ *		  main.h/dlg.h shifted by LANG_BASE_NL (10000) so a
+ *		  single executable can carry all three languages.
+ *
+ *		  This file is rcinclude'd from main.rc, so it must
+ *		  not re-include OS2.H/MAIN.H/DLG.H by itself.
+ *
+ *  Concepts   :  multilingual single-executable resources
+ *
+ ***********************************************************************/
+
+STRINGTABLE
+{
+    10001   "*.bbg"              /* IDS_FILEOPENEXT      */
+    10002   "Vangbal"            /* IDS_APPNAME          */
+    10004   "Open spel"          /* IDS_OPEN             */
+    10006   "Opslaan spel"       /* IDS_SAVE             */
+    10007   "Naamloos"           /* IDS_UNTITLED         */
+    10008   " - "                /* IDS_TITLEBARSEPARATOR*/
+    10009   "Object Klasse"      /* IDS_OBJECTCLASS      */
+    10020   "~Spel"              /* IDS_MEN_FILE         */
+    10021   "~Nieuw"             /* IDS_MEN_NEW          */
+    10022   "~Openen..."         /* IDS_MEN_LOAD         */
+    10023   "O~pslaan"           /* IDS_MEN_SAVE         */
+    10024   "Op~slaan als..."    /* IDS_MEN_SAVEAS       */
+    10025   "Start/~Pause   Enter" /* IDS_MEN_START      */
+    10026   "~Eregalerij"        /* IDS_MEN_HSCORES      */
+    10027   "~Afsluiten       Esc" /* IDS_MEN_EXIT        */
+    10028   "~Instellingen"      /* IDS_MEN_SETTINGS     */
+    10029   "~Geluid"            /* IDS_MEN_SOUND        */
+    10030   "~Aan"               /* IDS_MEN_SOUNDON      */
+    10031   "~Uit"               /* IDS_MEN_SOUNDOFF     */
+    10032   "~Weergave"          /* IDS_MEN_STYLE        */
+    10033   "~2D    F2"          /* IDS_MEN_STYLE2D      */
+    10034   "~3D    F3"          /* IDS_MEN_STYLE3D      */
+    10035   "~Niveau"            /* IDS_MEN_LEVEL        */
+    10036   "Ta~al"              /* IDS_MEN_LANGUAGE     */
+    10037   "En~gels"            /* IDS_MEN_LANG_EN      */
+    10038   "~Nederlands"        /* IDS_MEN_LANG_NL      */
+    10039   "~Spaans"            /* IDS_MEN_LANG_ES      */
+    10040   "~Alle instellingen" /* IDS_MEN_SETTINGS_ALL */
+    10041   "~Help"              /* IDS_MEN_HELP         */
+    10042   "~Help"              /* IDS_MEN_HELPGENERAL  */
+    10043   "Help-~index"        /* IDS_MEN_HELPINDEX    */
+    10044   "Help ~gebruiken"    /* IDS_MEN_HELPUSING    */
+    10045   "Help bij ~toetsen"  /* IDS_MEN_HELPKEYS     */
+    10046   "Inf~o"              /* IDS_MEN_HELPPROD     */
+    10050   "Tijd-%d "          /* IDS_FMT_TIME         */
+    10051   "Niveau-%d "        /* IDS_FMT_LEVEL        */
+    10052   "Punten-%d(%d%%)      " /* IDS_FMT_SCORE     */
+    10053   "Tijd-0"            /* IDS_PREV_TIME        */
+    10054   "Naamloos"          /* IDS_NONAME           */
+    10055   " - winnaar!"       /* IDS_WINNER           */
+    10056   "Waarschuwing"      /* IDS_TITLE_WARNING    */
+}
+
+MESSAGETABLE
+{
+    10001   "Initialisatie mislukt."
+    10002   "Kan geen hoofdvenster maken."
+    10003   "Ongeldig bestand."
+    10008   "Kan instellingen venster niet tonen."
+    10009   "Kan geen HPS voor het venster krijgen."
+    10010   "Kan helptekst niet laden."
+    10011   "Kan tekst niet laden."
+    10012   "Gefeliciteerd! Je hebt gewonnen."
+    10013   "Heel goed! Je gaat naar het volgende niveau."
+    10014   "Het spijt me! Je hebt verloren."
+    10015   "Wil je dit spel opslaan?"
+    10016   "Kan helpvenster niet tonen."
+    10017   "Kan het programma niet afsluiten."
+    10018   "Het bestand bestaat reeds.  Wil je het overschrijven?"
+    10019   "Kan bestandsinformatie niet lezen."
+    10020   "Niet genoeg geheugen."
+    10021   "Kan bestand niet lezen."
+    10022   "Kan bestand niet schrijven."
+    10023   "Kan de instellingen niet laden."
+    10024   "Kan de hoogste punten aantallen niet laden."
+    10025   "Kan de instellingen niet bewaren."
+    10026   "Grootte van de cel moet liggen tussen 6 en 12."
+    10027   "Kolom grootte moet liggen tussen 50 en 100."
+    10028   "Rij grootte moet liggen tussen 30 en 60"
+    10029   "Elk type veld moeten een andere kleur hebben."
+    10074   "Je uitleg kan deze boodschap vervangen."
+}
+
+/* Dutch dialog templates are rcinclude'd from main.rc (dialogs.nl.dlg). */
+/***************************  End of lang_nl.rc *************************/

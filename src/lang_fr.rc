@@ -1,0 +1,96 @@
+/**************************************************************************
+ *
+ *  File name  :  lang_fr.rc
+ *
+ *  Description:  French language resource tables (namespace +40000).
+ *		  Pure ASCII text (no accented characters), resource ids
+ *		  are the base ids from main.h/dlg.h shifted by
+ *		  LANG_BASE_FR (40000) so a single executable can carry
+ *		  all five languages.
+ *
+ *		  This file is rcinclude'd from main.rc, so it must
+ *		  not re-include OS2.H/MAIN.H/DLG.H by itself.
+ *
+ *  Concepts   :  multilingual single-executable resources
+ *
+ ***********************************************************************/
+
+STRINGTABLE
+{
+    40001   "*.bbg"              /* IDS_FILEOPENEXT      */
+    40002   "Attrape-Balle"      /* IDS_APPNAME          */
+    40004   "Charger la partie"  /* IDS_OPEN             */
+    40006   "Enregistrer la partie" /* IDS_SAVE          */
+    40007   "Sans titre"         /* IDS_UNTITLED         */
+    40008   " - "                /* IDS_TITLEBARSEPARATOR*/
+    40009   "Classe d'objet"     /* IDS_OBJECTCLASS      */
+    40020   "~Partie"            /* IDS_MEN_FILE         */
+    40021   "Nou~velle partie"   /* IDS_MEN_NEW          */
+    40022   "~Charger..."        /* IDS_MEN_LOAD         */
+    40023   "~Enregistrer"       /* IDS_MEN_SAVE         */
+    40024   "Enregistrer ~sous..." /* IDS_MEN_SAVEAS     */
+    40025   "~Demarrer/~Pause   Entree" /* IDS_MEN_START */
+    40026   "Rec~ords"           /* IDS_MEN_HSCORES      */
+    40027   "~Quitter          Esc" /* IDS_MEN_EXIT      */
+    40028   "~Options"           /* IDS_MEN_SETTINGS     */
+    40029   "~Son"               /* IDS_MEN_SOUND        */
+    40030   "~Marche"            /* IDS_MEN_SOUNDON      */
+    40031   "A~rret"             /* IDS_MEN_SOUNDOFF     */
+    40032   "~Style"             /* IDS_MEN_STYLE        */
+    40033   "~2D    F2"          /* IDS_MEN_STYLE2D      */
+    40034   "~3D    F3"          /* IDS_MEN_STYLE3D      */
+    40035   "~Niveau"            /* IDS_MEN_LEVEL        */
+    40036   "~Langue"            /* IDS_MEN_LANGUAGE     */
+    40037   "En~glish"           /* IDS_MEN_LANG_EN      */
+    40038   "N~ederlands"        /* IDS_MEN_LANG_NL      */
+    40039   "Es~panol"           /* IDS_MEN_LANG_ES      */
+    40040   "Toutes les ~options" /* IDS_MEN_SETTINGS_ALL*/
+    40041   "~Aide"              /* IDS_MEN_HELP         */
+    40042   "Aide ~generale"     /* IDS_MEN_HELPGENERAL  */
+    40043   "~Index de l'aide"   /* IDS_MEN_HELPINDEX    */
+    40044   "Utiliser l'~aide"   /* IDS_MEN_HELPUSING    */
+    40045   "~Touches"           /* IDS_MEN_HELPKEYS     */
+    40046   "~A propos"          /* IDS_MEN_HELPPROD     */
+    40047   "~Deutsch"           /* IDS_MEN_LANG_DE      */
+    40048   "Fran~cais"          /* IDS_MEN_LANG_FR      */
+    40050   "Temps-%d "          /* IDS_FMT_TIME         */
+    40051   "Niveau-%d "         /* IDS_FMT_LEVEL        */
+    40052   "Points-%d(%d%%)      " /* IDS_FMT_SCORE     */
+    40053   "Temps-0"            /* IDS_PREV_TIME        */
+    40054   "Sans nom"           /* IDS_NONAME           */
+    40055   " - gagnant!"        /* IDS_WINNER           */
+    40056   "Avertissement"      /* IDS_TITLE_WARNING    */
+}
+
+MESSAGETABLE
+{
+    40001   "Echec de l'initialisation."
+    40002   "Impossible de creer la fenetre principale."
+    40003   "Fichier d'entree invalide."
+    40008   "Impossible d'afficher la fenetre des options."
+    40009   "Impossible d'obtenir un HPS pour la fenetre."
+    40010   "Impossible de charger l'aide."
+    40011   "Impossible de charger le texte."
+    40012   "Felicitations! Vous avez gagne!"
+    40013   "Bravo! Vous passez au niveau suivant."
+    40014   "Dommage! Vous avez perdu."
+    40015   "Voulez-vous enregistrer cette partie?"
+    40016   "Impossible d'afficher la fenetre d'aide."
+    40017   "Impossible de mettre fin au programme."
+    40018   "Ce fichier existe deja. Voulez-vous le remplacer?"
+    40019   "Erreur lors de la lecture des informations du fichier."
+    40020   "Memoire insuffisante."
+    40021   "Erreur lors de la lecture du fichier."
+    40022   "Erreur lors de l'ecriture du fichier."
+    40023   "Impossible de charger les parametres."
+    40024   "Impossible de charger les records."
+    40025   "Impossible d'enregistrer les parametres."
+    40026   "La taille de la cellule doit etre entre 6 et 12."
+    40027   "Le nombre de colonnes doit etre entre 50 et 100."
+    40028   "Le nombre de lignes doit etre entre 30 et 60."
+    40029   "Chaque type de cellule doit avoir une couleur differente."
+    40074   "Votre tutoriel peut remplacer ce message."
+}
+
+/* French dialog templates are rcinclude'd from main.rc (dialogs.fr.dlg). */
+/***************************  End of lang_fr.rc *************************/

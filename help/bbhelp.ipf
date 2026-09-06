@@ -10,8 +10,8 @@
 .*  Main window extended help panel                             *
 .*      res = PANEL_MAIN                                        *
 .*--------------------------------------------------------------*/
-:h1 res=2100 name=PANEL_MAIN.About BallsBall version 1.1
-:i1 id=aboutMain. About BallsBall version 1.1
+:h1 res=2100 name=PANEL_MAIN.About BallsBall version 1.2
+:i1 id=aboutMain. About BallsBall version 1.2
 :p.The BallsBall Game is a sample Presentation Manager game.
 I saw game like this some years ago on old big, but no good
 computers with black-green screens. I not to remember name of
@@ -23,6 +23,12 @@ play, that has made it anew.
 :p.And I have thought: let the people play too!
 I have added some decorations, which so appeal to the public.
 And here, look!
+
+:p.BallsBall 1.2 is a modernized build of this open-source game.
+It builds with Open Watcom (compile.cmd / makefile.wat), carries
+English, Dutch, Spanish, German and French in the single
+executable, and scales the game window to at least 1024x768 when
+the desktop allows it (the cells stay square).
 
 :ul.
 :ul.

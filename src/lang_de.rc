@@ -1,0 +1,96 @@
+/**************************************************************************
+ *
+ *  File name  :  lang_de.rc
+ *
+ *  Description:  German language resource tables (namespace +30000).
+ *		  Pure ASCII text (no umlauts), resource ids are the
+ *		  base ids from main.h/dlg.h shifted by LANG_BASE_DE
+ *		  (30000) so a single executable can carry all five
+ *		  languages.
+ *
+ *		  This file is rcinclude'd from main.rc, so it must
+ *		  not re-include OS2.H/MAIN.H/DLG.H by itself.
+ *
+ *  Concepts   :  multilingual single-executable resources
+ *
+ ***********************************************************************/
+
+STRINGTABLE
+{
+    30001   "*.bbg"              /* IDS_FILEOPENEXT      */
+    30002   "Fangball"           /* IDS_APPNAME          */
+    30004   "Spiel laden"        /* IDS_OPEN             */
+    30006   "Spiel speichern"    /* IDS_SAVE             */
+    30007   "Ohne Namen"         /* IDS_UNTITLED         */
+    30008   " - "                /* IDS_TITLEBARSEPARATOR*/
+    30009   "Objektklasse"       /* IDS_OBJECTCLASS      */
+    30020   "~Spiel"             /* IDS_MEN_FILE         */
+    30021   "~Neu"               /* IDS_MEN_NEW          */
+    30022   "Spiel ~laden..."    /* IDS_MEN_LOAD         */
+    30023   "~Speichern"         /* IDS_MEN_SAVE         */
+    30024   "Speichern un~ter..." /* IDS_MEN_SAVEAS      */
+    30025   "Start/~Pause   Enter" /* IDS_MEN_START      */
+    30026   "Rek~orde"           /* IDS_MEN_HSCORES      */
+    30027   "B~eenden         Esc" /* IDS_MEN_EXIT       */
+    30028   "~Einstellungen"     /* IDS_MEN_SETTINGS     */
+    30029   "~Ton"               /* IDS_MEN_SOUND        */
+    30030   "~Ein"               /* IDS_MEN_SOUNDON      */
+    30031   "~Aus"               /* IDS_MEN_SOUNDOFF     */
+    30032   "~Ansicht"           /* IDS_MEN_STYLE        */
+    30033   "~2D    F2"          /* IDS_MEN_STYLE2D      */
+    30034   "~3D    F3"          /* IDS_MEN_STYLE3D      */
+    30035   "~Stufe"             /* IDS_MEN_LEVEL        */
+    30036   "~Sprache"           /* IDS_MEN_LANGUAGE     */
+    30037   "En~glish"           /* IDS_MEN_LANG_EN      */
+    30038   "N~ederlands"        /* IDS_MEN_LANG_NL      */
+    30039   "Es~panol"           /* IDS_MEN_LANG_ES      */
+    30040   "Alle Ei~nstellungen" /* IDS_MEN_SETTINGS_ALL*/
+    30041   "~Hilfe"             /* IDS_MEN_HELP         */
+    30042   "~Allgemeine Hilfe"  /* IDS_MEN_HELPGENERAL  */
+    30043   "Hilfe~index"        /* IDS_MEN_HELPINDEX    */
+    30044   "Hilfe ~benutzen"    /* IDS_MEN_HELPUSING    */
+    30045   "~Tasten"            /* IDS_MEN_HELPKEYS     */
+    30046   "~Informationen"     /* IDS_MEN_HELPPROD     */
+    30047   "~Deutsch"           /* IDS_MEN_LANG_DE      */
+    30048   "Fran~cais"          /* IDS_MEN_LANG_FR      */
+    30050   "Zeit-%d "           /* IDS_FMT_TIME         */
+    30051   "Stufe-%d "          /* IDS_FMT_LEVEL        */
+    30052   "Punkte-%d(%d%%)      " /* IDS_FMT_SCORE     */
+    30053   "Zeit-0"             /* IDS_PREV_TIME        */
+    30054   "Ohne Namen"         /* IDS_NONAME           */
+    30055   " - Sieger!"         /* IDS_WINNER           */
+    30056   "Warnung"            /* IDS_TITLE_WARNING    */
+}
+
+MESSAGETABLE
+{
+    30001   "Initialisierung fehlgeschlagen."
+    30002   "Das Hauptfenster konnte nicht erzeugt werden."
+    30003   "Ungueltige Eingabedatei."
+    30008   "Das Einstellungsfenster kann nicht angezeigt werden."
+    30009   "Kann keinen HPS fuer das Fenster erhalten."
+    30010   "Das Hilfeprogramm konnte nicht geladen werden."
+    30011   "Text konnte nicht geladen werden."
+    30012   "Herzlichen Glueckwunsch! Sie haben gewonnen!"
+    30013   "Gut gemacht! Sie erreichen die naechste Stufe."
+    30014   "Schade! Sie haben verloren."
+    30015   "Wollen Sie dieses Spiel speichern?"
+    30016   "Das Hilfefenster kann nicht angezeigt werden."
+    30017   "Das Programm kann nicht beendet werden."
+    30018   "Die Datei existiert bereits. Soll sie ueberschrieben werden?"
+    30019   "Fehler beim Lesen der Dateiinformationen."
+    30020   "Nicht genuegend Speicher."
+    30021   "Fehler beim Lesen der Datei."
+    30022   "Fehler beim Schreiben der Datei."
+    30023   "Die Spieleinstellungen konnten nicht geladen werden."
+    30024   "Die Rekorde konnten nicht geladen werden."
+    30025   "Die Spieleinstellungen konnten nicht gespeichert werden."
+    30026   "Die Zellengroesse muss zwischen 6 und 12 liegen."
+    30027   "Die Spaltenzahl muss zwischen 50 und 100 liegen."
+    30028   "Die Zeilenzahl muss zwischen 30 und 60 liegen."
+    30029   "Jeder Zellentyp braucht eine andere Farbe."
+    30074   "Ihr Text kann diese Meldung ersetzen."
+}
+
+/* German dialog templates are rcinclude'd from main.rc (dialogs.de.dlg). */
+/***************************  End of lang_de.rc *************************/
