@@ -79,3 +79,7 @@ help pages (BBHELP.HLP) are English only.
 AUTHORS
 ============
 - Dmitry Ivanov
+- Martin Iturbide (Update 2026)
+
+## LINKS
+* https://github.com/OS2World/GAME-ACTION-BallsBall
