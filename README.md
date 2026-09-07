@@ -27,7 +27,7 @@ BallsBall 1.2 is a modernized build of the open-source release 1.1
 
 LICENSE
 ========
-GNU GPL V2
+GNU GPL V2 or later
 
 COMPILE TOOLS
 =============
