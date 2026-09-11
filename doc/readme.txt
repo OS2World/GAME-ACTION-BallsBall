@@ -1,10 +1,23 @@
 -------------------------------------------------------------------------------
-BallsBall 1.2 - Source package readme
+BallsBall 1.3 - Source package readme
 -------------------------------------------------------------------------------
 
 This package is a modernized build of the open-source BallsBall /
-Vangbal source.  It is the same game, rebuilt for OS/2 and with the
-five languages unified into one executable.
+Vangbal source.  It is the same game, rebuilt for OS/2 and with six
+languages unified into one executable.
+
+What is new in 1.3
+------------------
+  - Italian (Italiano) added to the Language menu; now six languages:
+    English, Nederlands, Espanol, Deutsch, Francais, Italiano.
+  - Menu bar renamed to [Game] [Options] [Help].
+  - Ctrl+X and F3 exit the game.
+  - Build flags switched from -od -d2 (debug) to -Oaxt -d0 (optimised
+    release); stack raised to 65536 bytes.
+  - compile.cmd auto-detects WATCOM installation, writes full build log
+    to compile-wat.log, and exits non-zero on failure.
+  - Output directory renamed from bin-wat to bin.
+  - BLDLEVEL signature added.
 
 What is new in 1.2
 ------------------
@@ -22,9 +35,10 @@ What is new in 1.2
 
 Build
 -----
-Run `compile.cmd` (or `wmake -f makefile.wat`); the output is
-bin-wat\bb.exe plus bb.map.  Run bb.exe from bin-wat so the game can
-create/read its bb.ini and BBHELP.HLP next to itself.
+Run `compile.cmd`; Open Watcom is auto-detected from C:\WATCOM or
+D:\WATCOM.  The output is bin\bb.exe plus bb.map.  Run bb.exe from
+bin\ so the game can create/read its bb.ini and BBHELP.HLP next to
+itself.
 
 History
 -------

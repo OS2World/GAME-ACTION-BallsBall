@@ -29,7 +29,7 @@ STRINGTABLE
     30022   "Spiel ~laden..."    /* IDS_MEN_LOAD         */
     30023   "~Speichern"         /* IDS_MEN_SAVE         */
     30024   "Speichern un~ter..." /* IDS_MEN_SAVEAS      */
-    30025   "Start/~Pause   Enter" /* IDS_MEN_START      */
+    30025   "~Pause Spiel\tCtrl+P" /* IDS_MEN_START      */
     30026   "Rek~orde"           /* IDS_MEN_HSCORES      */
     30027   "B~eenden         Esc" /* IDS_MEN_EXIT       */
     30028   "~Einstellungen"     /* IDS_MEN_SETTINGS     */
@@ -44,7 +44,7 @@ STRINGTABLE
     30037   "En~glish"           /* IDS_MEN_LANG_EN      */
     30038   "N~ederlands"        /* IDS_MEN_LANG_NL      */
     30039   "Es~panol"           /* IDS_MEN_LANG_ES      */
-    30040   "Alle Ei~nstellungen" /* IDS_MEN_SETTINGS_ALL*/
+    30040   "Visuelle Ei~nstellungen" /* IDS_MEN_SETTINGS_ALL*/
     30041   "~Hilfe"             /* IDS_MEN_HELP         */
     30042   "~Allgemeine Hilfe"  /* IDS_MEN_HELPGENERAL  */
     30043   "Hilfe~index"        /* IDS_MEN_HELPINDEX    */
@@ -53,6 +53,7 @@ STRINGTABLE
     30046   "~Informationen"     /* IDS_MEN_HELPPROD     */
     30047   "~Deutsch"           /* IDS_MEN_LANG_DE      */
     30048   "Fran~cais"          /* IDS_MEN_LANG_FR      */
+    30049   "It~alienisch"       /* IDS_MEN_LANG_IT      */
     30050   "Zeit-%d "           /* IDS_FMT_TIME         */
     30051   "Stufe-%d "          /* IDS_FMT_LEVEL        */
     30052   "Punkte-%d(%d%%)      " /* IDS_FMT_SCORE     */
@@ -60,6 +61,8 @@ STRINGTABLE
     30054   "Ohne Namen"         /* IDS_NONAME           */
     30055   " - Sieger!"         /* IDS_WINNER           */
     30056   "Warnung"            /* IDS_TITLE_WARNING    */
+    30057   "~Hintergrundlauf\tCtrl+B"   /* IDS_MEN_BACKGRND     */
+    30058   "~Rahmensteuerung\tCtrl+F"   /* IDS_MEN_FRAME        */
 }
 
 MESSAGETABLE

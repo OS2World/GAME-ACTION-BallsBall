@@ -63,7 +63,7 @@ MENU IDR_MAIN
            END
 
         MENUITEM SEPARATOR
-        MENUITEM    "All Se~ttings",    IDM_SETTINGS_ALL, MIS_TEXT
+        MENUITEM    "Visual Se~ttings", IDM_SETTINGS_ALL, MIS_TEXT
     }
 
 /* Application specific menus go here. */

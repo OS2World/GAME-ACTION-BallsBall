@@ -29,7 +29,7 @@ STRINGTABLE
     20022   "~Abrir..."          /* IDS_MEN_LOAD         */
     20023   "~Guardar"           /* IDS_MEN_SAVE         */
     20024   "Guardar ~como..."   /* IDS_MEN_SAVEAS       */
-    20025   "Iniciar/~Pausar   Enter" /* IDS_MEN_START   */
+    20025   "~Pausar Juego\tCtrl+P"   /* IDS_MEN_START   */
     20026   "~Ver Marcas"        /* IDS_MEN_HSCORES      */
     20027   "~Salir            Esc" /* IDS_MEN_EXIT      */
     20028   "~Configuracion"     /* IDS_MEN_SETTINGS     */
@@ -44,13 +44,16 @@ STRINGTABLE
     20037   "~Ingles"            /* IDS_MEN_LANG_EN      */
     20038   "~Holandes"          /* IDS_MEN_LANG_NL      */
     20039   "Es~panol"           /* IDS_MEN_LANG_ES      */
-    20040   "~Todas las Opciones" /* IDS_MEN_SETTINGS_ALL*/
+    20040   "~Ajustes visuales"  /* IDS_MEN_SETTINGS_ALL*/
     20041   "~Ayuda"             /* IDS_MEN_HELP         */
     20042   "~Ayuda general"     /* IDS_MEN_HELPGENERAL  */
     20043   "Ayuda al ~indice"   /* IDS_MEN_HELPINDEX    */
     20044   "~Usar la Ayuda"     /* IDS_MEN_HELPUSING    */
     20045   "Ayuda de ~teclas"   /* IDS_MEN_HELPKEYS     */
     20046   "~Informacion del producto" /* IDS_MEN_HELPPROD */
+    20047   "~Aleman"            /* IDS_MEN_LANG_DE      */
+    20048   "~Frances"           /* IDS_MEN_LANG_FR      */
+    20049   "It~aliano"          /* IDS_MEN_LANG_IT      */
     20050   "Tiempo-%d "        /* IDS_FMT_TIME         */
     20051   "Nivel-%d "         /* IDS_FMT_LEVEL        */
     20052   "Puntos-%d(%d%%)      " /* IDS_FMT_SCORE     */
@@ -58,6 +61,8 @@ STRINGTABLE
     20054   "Sin nombre"        /* IDS_NONAME           */
     20055   " - ganador!"       /* IDS_WINNER           */
     20056   "Aviso"             /* IDS_TITLE_WARNING    */
+    20057   "~Fondo Activo\tCtrl+B"      /* IDS_MEN_BACKGRND     */
+    20058   "~Marco\tCtrl+F"             /* IDS_MEN_FRAME        */
 }
 
 MESSAGETABLE

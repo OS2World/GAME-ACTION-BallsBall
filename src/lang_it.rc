@@ -1,0 +1,99 @@
+/**************************************************************************
+ *
+ *  File name  :  lang_it.rc
+ *
+ *  Description:  Italian language resource tables (namespace +50000).
+ *		  Pure ASCII text (no accented characters), resource ids
+ *		  are the base ids from main.h/dlg.h shifted by
+ *		  LANG_BASE_IT (50000) so a single executable can carry
+ *		  all six languages.
+ *
+ *		  This file is rcinclude'd from main.rc, so it must
+ *		  not re-include OS2.H/MAIN.H/DLG.H by itself.
+ *
+ *  Concepts   :  multilingual single-executable resources
+ *
+ ***********************************************************************/
+
+STRINGTABLE
+{
+    50001   "*.bbg"              /* IDS_FILEOPENEXT      */
+    50002   "PalleBall"          /* IDS_APPNAME          */
+    50004   "Apri partita"       /* IDS_OPEN             */
+    50006   "Salva partita"      /* IDS_SAVE             */
+    50007   "Senza nome"         /* IDS_UNTITLED         */
+    50008   " - "                /* IDS_TITLEBARSEPARATOR*/
+    50009   "Classe oggetto"     /* IDS_OBJECTCLASS      */
+    50020   "~Gioco"             /* IDS_MEN_FILE         */
+    50021   "~Nuova partita"     /* IDS_MEN_NEW          */
+    50022   "~Apri..."           /* IDS_MEN_LOAD         */
+    50023   "~Salva"             /* IDS_MEN_SAVE         */
+    50024   "Salva ~come..."     /* IDS_MEN_SAVEAS       */
+    50025   "~Pausa Gioco\tCtrl+P"  /* IDS_MEN_START     */
+    50026   "~Record"            /* IDS_MEN_HSCORES      */
+    50027   "~Esci            Esc" /* IDS_MEN_EXIT       */
+    50028   "~Opzioni"           /* IDS_MEN_SETTINGS     */
+    50029   "~Suono"             /* IDS_MEN_SOUND        */
+    50030   "~Attivato"          /* IDS_MEN_SOUNDON      */
+    50031   "~Disattivato"       /* IDS_MEN_SOUNDOFF     */
+    50032   "~Stile"             /* IDS_MEN_STYLE        */
+    50033   "~2D    F2"          /* IDS_MEN_STYLE2D      */
+    50034   "~3D"                /* IDS_MEN_STYLE3D      */
+    50035   "~Livello"           /* IDS_MEN_LEVEL        */
+    50036   "~Lingua"            /* IDS_MEN_LANGUAGE     */
+    50037   "In~glese"           /* IDS_MEN_LANG_EN      */
+    50038   "O~landese"          /* IDS_MEN_LANG_NL      */
+    50039   "S~pagnolo"          /* IDS_MEN_LANG_ES      */
+    50040   "Impostazioni ~visive" /* IDS_MEN_SETTINGS_ALL */
+    50041   "~Aiuto"             /* IDS_MEN_HELP         */
+    50042   "~Aiuto generale"    /* IDS_MEN_HELPGENERAL  */
+    50043   "~Indice aiuto"      /* IDS_MEN_HELPINDEX    */
+    50044   "~Usare l'aiuto"     /* IDS_MEN_HELPUSING    */
+    50045   "Aiuto ~tasti"       /* IDS_MEN_HELPKEYS     */
+    50046   "~Informazioni"      /* IDS_MEN_HELPPROD     */
+    50047   "~Tedesco"           /* IDS_MEN_LANG_DE      */
+    50048   "~Francese"          /* IDS_MEN_LANG_FR      */
+    50049   "It~aliano"          /* IDS_MEN_LANG_IT      */
+    50050   "Tempo-%d "          /* IDS_FMT_TIME         */
+    50051   "Livello-%d "        /* IDS_FMT_LEVEL        */
+    50052   "Punteggio-%d(%d%%)      " /* IDS_FMT_SCORE  */
+    50053   "Tempo-0"            /* IDS_PREV_TIME        */
+    50054   "Senza nome"         /* IDS_NONAME           */
+    50055   " - vincitore!"      /* IDS_WINNER           */
+    50056   "Avviso"             /* IDS_TITLE_WARNING    */
+    50057   "~Sfondo Attivo\tCtrl+B"     /* IDS_MEN_BACKGRND     */
+    50058   "~Controlli Cornice\tCtrl+F" /* IDS_MEN_FRAME        */
+}
+
+MESSAGETABLE
+{
+    50001   "Inizializzazione fallita."
+    50002   "Impossibile creare la finestra principale."
+    50003   "File di input non valido."
+    50008   "Impossibile mostrare la finestra delle opzioni."
+    50009   "Impossibile ottenere un HPS per la finestra."
+    50010   "Impossibile caricare l'aiuto."
+    50011   "Impossibile caricare il testo."
+    50012   "Complimenti! Hai vinto!"
+    50013   "Bravo! Passi al livello successivo."
+    50014   "Mi dispiace! Hai perso."
+    50015   "Vuoi salvare questa partita?"
+    50016   "Impossibile mostrare la finestra di aiuto."
+    50017   "Impossibile terminare il programma."
+    50018   "Il file esiste gia. Vuoi sovrascriverlo?"
+    50019   "Errore nella lettura delle informazioni del file."
+    50020   "Memoria insufficiente."
+    50021   "Errore nella lettura del file."
+    50022   "Errore nella scrittura del file."
+    50023   "Impossibile caricare le impostazioni."
+    50024   "Impossibile caricare i record."
+    50025   "Impossibile salvare le impostazioni."
+    50026   "La dimensione della cella deve essere tra 6 e 12."
+    50027   "Il numero di colonne deve essere tra 50 e 100."
+    50028   "Il numero di righe deve essere tra 30 e 60."
+    50029   "Ogni tipo di cella deve avere un colore diverso."
+    50074   "Il tuo testo puo sostituire questo messaggio."
+}
+
+/* Italian dialog templates are rcinclude'd from main.rc (dialogs.it.dlg). */
+/***************************  End of lang_it.rc *************************/

@@ -144,13 +144,14 @@ BOOL Init(VOID)
    if((hinii = PrfOpenProfile(hab,szIniFile))){
       iLang = (int)PrfQueryProfileInt(hinii,"Settings","Language",LANG_EN);
       PrfCloseProfile(hinii);}
-   if(iLang != LANG_NL && iLang != LANG_ES && iLang != LANG_DE && iLang != LANG_FR)
+   if(iLang != LANG_NL && iLang != LANG_ES && iLang != LANG_DE && iLang != LANG_FR && iLang != LANG_IT)
       iLang = LANG_EN;
    switch(iLang) {
       case LANG_NL: iLangBase = LANG_BASE_NL; break;
       case LANG_ES: iLangBase = LANG_BASE_ES; break;
       case LANG_DE: iLangBase = LANG_BASE_DE; break;
       case LANG_FR: iLangBase = LANG_BASE_FR; break;
+      case LANG_IT: iLangBase = LANG_BASE_IT; break;
       default:      iLangBase = LANG_BASE_EN; break; }
    /* load application name from resource file */
    if(0 == WinLoadString(hab, (HMODULE)0, iLangBase+IDS_APPNAME, MAXNAMEL, szAppName))
@@ -194,7 +195,7 @@ VOID SetLanguage(int lang)
 {  HINI hinis;
    CHAR szL[4];
 
-   if(lang == LANG_NL || lang == LANG_ES || lang == LANG_DE || lang == LANG_FR)
+   if(lang == LANG_NL || lang == LANG_ES || lang == LANG_DE || lang == LANG_FR || lang == LANG_IT)
       iLang = lang;
    else iLang = LANG_EN;
    switch(iLang) {
@@ -202,6 +203,7 @@ VOID SetLanguage(int lang)
       case LANG_ES: iLangBase = LANG_BASE_ES; break;
       case LANG_DE: iLangBase = LANG_BASE_DE; break;
       case LANG_FR: iLangBase = LANG_BASE_FR; break;
+      case LANG_IT: iLangBase = LANG_BASE_IT; break;
       default:      iLangBase = LANG_BASE_EN; break; }
    if((hinis = PrfOpenProfile(hab,szIniFile))){
       sprintf(szL,"%d",iLang);

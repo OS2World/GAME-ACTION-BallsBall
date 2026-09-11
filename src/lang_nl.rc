@@ -28,7 +28,7 @@ STRINGTABLE
     10022   "~Openen..."         /* IDS_MEN_LOAD         */
     10023   "O~pslaan"           /* IDS_MEN_SAVE         */
     10024   "Op~slaan als..."    /* IDS_MEN_SAVEAS       */
-    10025   "Start/~Pause   Enter" /* IDS_MEN_START      */
+    10025   "~Pauze Spel\tCtrl+P"  /* IDS_MEN_START      */
     10026   "~Eregalerij"        /* IDS_MEN_HSCORES      */
     10027   "~Afsluiten       Esc" /* IDS_MEN_EXIT        */
     10028   "~Instellingen"      /* IDS_MEN_SETTINGS     */
@@ -43,13 +43,16 @@ STRINGTABLE
     10037   "En~gels"            /* IDS_MEN_LANG_EN      */
     10038   "~Nederlands"        /* IDS_MEN_LANG_NL      */
     10039   "~Spaans"            /* IDS_MEN_LANG_ES      */
-    10040   "~Alle instellingen" /* IDS_MEN_SETTINGS_ALL */
+    10040   "Visuele ~instellingen" /* IDS_MEN_SETTINGS_ALL */
     10041   "~Help"              /* IDS_MEN_HELP         */
     10042   "~Help"              /* IDS_MEN_HELPGENERAL  */
     10043   "Help-~index"        /* IDS_MEN_HELPINDEX    */
     10044   "Help ~gebruiken"    /* IDS_MEN_HELPUSING    */
     10045   "Help bij ~toetsen"  /* IDS_MEN_HELPKEYS     */
     10046   "Inf~o"              /* IDS_MEN_HELPPROD     */
+    10047   "~Duits"             /* IDS_MEN_LANG_DE      */
+    10048   "Fr~ans"             /* IDS_MEN_LANG_FR      */
+    10049   "It~aliaans"         /* IDS_MEN_LANG_IT      */
     10050   "Tijd-%d "          /* IDS_FMT_TIME         */
     10051   "Niveau-%d "        /* IDS_FMT_LEVEL        */
     10052   "Punten-%d(%d%%)      " /* IDS_FMT_SCORE     */
@@ -57,6 +60,8 @@ STRINGTABLE
     10054   "Naamloos"          /* IDS_NONAME           */
     10055   " - winnaar!"       /* IDS_WINNER           */
     10056   "Waarschuwing"      /* IDS_TITLE_WARNING    */
+    10057   "~Achtergrond\tCtrl+B"       /* IDS_MEN_BACKGRND     */
+    10058   "~Frame besturing\tCtrl+F"   /* IDS_MEN_FRAME        */
 }
 
 MESSAGETABLE

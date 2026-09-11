@@ -1,13 +1,15 @@
 -------------------------------------------------------------------------------
-BallsBall 1.2 update (modernized build)
+BallsBall 1.3 update (modernized build)
 -------------------------------------------------------------------------------
-This file describes the original BallsBall / Vangbal 1.1 release (2002).
-The current release is 1.2, a modernized build that
+This file describes the original BallsBall 1.1 release (2002).  The
+current release is 1.3, a modernized build that
 
   - builds with Open Watcom (compile.cmd / makefile.wat), no hardcoded paths
-  - puts all five languages - English, Dutch, Spanish, German, French -
+  - puts all six languages - English, Dutch, Spanish, German, French, Italian -
     into the single bb.exe executable
+  - menu bar is now [Game] [Options] [Help]; F3 and Ctrl+X exit the game
   - scales the game window to at least 1024x768 when the desktop allows it
+  - release-optimised build flags (-Oaxt -d0) and 64 KB stack
 
 See README.md for the current build instructions and details.
 -------------------------------------------------------------------------------
@@ -23,7 +25,7 @@ martin@os2world.com
 http://www.os2world.com/games
 -------------------------------------------------------------------------
 
-Read Me for Vangbal Game version 1.1
+Read Me for BallsBall Game version 1.1
 
 Contents:
    1. License.
@@ -40,14 +42,14 @@ Contents:
 1.License.
 This is a shareware program. The program is provided "as is"
 without warranty of any kind. For more information see
-license.txt or Vangbal Help (License item in bbhelp.hlp).
+license.txt or BallsBall Help (License item in bbhelp.hlp).
 
 2. System requirements
 0S/2 Operating System version 3.0 or later, 105 kBites free space on hard disk.
 
 3. List of files in package.
-   vb.exe       - Vangbal Game (required)
-   bbhelp.hlp   - Vangbal Help (required)
+   bb.exe       - BallsBall Game (required)
+   bbhelp.hlp   - BallsBall Help (required)
    readme.txt   - this file (required for automatic installation)
    license.txt  - license information (required for automatic installation)
    install.exe  - installation program (required for automatic installation)
@@ -57,15 +59,16 @@ license.txt or Vangbal Help (License item in bbhelp.hlp).
 
 4. Installation.
    4.1 Automatic installation.
-      1. Unpack vbal.zip.
+      1. Unpack bball.zip.
       2. Run install.exe. This program will copy files of game 
          in the directory which you indicate and will create 
          object on Desktop. 
-      Note: files from list and vrobj.dll required.
+      3. Delete source files.
+      Note: files from list is required.
    4.2 Manual installation.
-      1. Unpack vbal.zip.
-      2. Copy vb.exe and bbhelp.hlp in any directory created
-         by you and start vb.exe for beginnings of game.
+      1. Unpack bball.zip.
+      2. Copy bb.exe and bbhelp.hlp in any directory and start bb.exe 
+         for beginnings of game.
 
 5. Known problems.
 The textline can fall outside the limits a window. Also incorrect display

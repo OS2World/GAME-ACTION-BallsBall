@@ -257,18 +257,28 @@ MRESULT EXPENTRY HScoresDlgProc( HWND hwndDlg, ULONG msg, MPARAM mp1, MPARAM mp2
  *************************************************************************/
 MRESULT EXPENTRY SettingsDlgProc( HWND hwndDlg, ULONG msg, MPARAM mp1, MPARAM mp2 )
 {  char szMsg[7];
-   //RECTL rec,totalrec;
-   RECTL totalrec;
+   static RECTL totalrec;
+   static RECTL dlgRec;
    POINTL ptl;
    HPS hps;
    int i;
 
-   totalrec.xLeft  = 245; totalrec.yBottom = 146;
-   totalrec.xRight = 402; totalrec.yTop    = 310;
-
    switch ( msg ) {
 
-      case WM_INITDLG://�.�. ���樠������
+      case WM_INITDLG:
+      {  HWND hwndGB; SWP swpGB;
+         WinQueryWindowRect(hwndDlg, &dlgRec);
+         hwndGB = WinWindowFromID(hwndDlg, GB_SAMPLE);
+         if (hwndGB && WinQueryWindowPos(hwndGB, &swpGB)) {
+            totalrec.xLeft   = swpGB.x              + 4;
+            totalrec.yBottom = swpGB.y              + 4;
+            totalrec.xRight  = swpGB.x + swpGB.cx  - 4;
+            totalrec.yTop    = swpGB.y + swpGB.cy  - 2;
+         } else {
+            totalrec.xLeft = 245; totalrec.yBottom = 146;
+            totalrec.xRight= 402; totalrec.yTop    = 310;
+         }
+      }
          f = CLR_FIELD; c = CLR_CHANNEL; n = CLR_NEW;
          br= CLR_BREAK; r = CLR_RUNNER;  h = CLR_HUNTERS;
          ba= CLR_BALLS; s = CLR_STRING;  ch= CLR_CHAR;
@@ -328,40 +338,42 @@ MRESULT EXPENTRY SettingsDlgProc( HWND hwndDlg, ULONG msg, MPARAM mp1, MPARAM mp
          //   szMsg,"Move",0,MB_OK);
          if(!bDraw) {//���ᮢ뢠�� ��
             WinFillRect(hps, &rec, CLR_DARKGRAY);//ࠬ��
-            rec.xLeft  = 1; rec.yBottom = 1;
-            rec.xRight = 435; rec.yTop    = 367;
+            rec.xLeft   = dlgRec.xLeft   + 1;
+            rec.yBottom = dlgRec.yBottom + 1;
+            rec.xRight  = dlgRec.xRight  - 1;
+            rec.yTop    = dlgRec.yTop    - 1;
             WinFillRect(hps, &rec, CLR_PALEGRAY);//��� 䮭
             rec.yBottom = k;
-            rec.yTop    = 310-LineHeight;
-            j = (402-245)/bs; j *= bs;
-            rec.xRight = j+245; rec.xLeft  = 245;
+            rec.yTop    = totalrec.yTop-LineHeight;
+            j = (totalrec.xRight-totalrec.xLeft)/bs; j *= bs;
+            rec.xRight = j+totalrec.xLeft; rec.xLeft  = totalrec.xLeft;
             WinFillRect(hps, &rec, CLR_WHITE);}//�����-����
          if( !bDraw || p == &f ) //����
-            for(i=310-LineHeight-2*bs;i>=k;i-=bs)
-               for(j=245+bs;j<402-bs;j+=bs)DlgQuatro(&hps,i,j,f);
+            for(i=totalrec.yTop-LineHeight-2*bs;i>=k;i-=bs)
+               for(j=totalrec.xLeft+bs;j<totalrec.xRight-bs;j+=bs)DlgQuatro(&hps,i,j,f);
          if( !bDraw || p == &c ) {//��ਤ���
-            for(i=310-LineHeight-bs;i>=k;i-=bs) DlgQuatro(&hps,i,245,c);
-            for(j=245;j<405-bs;j+=bs) DlgQuatro(&hps,310-LineHeight-bs,j,c);}
+            for(i=totalrec.yTop-LineHeight-bs;i>=k;i-=bs) DlgQuatro(&hps,i,totalrec.xLeft,c);
+            for(j=totalrec.xLeft;j<totalrec.xRight+3-bs;j+=bs) DlgQuatro(&hps,totalrec.yTop-LineHeight-bs,j,c);}
          if( !bDraw || p == &n || p == &f ) //���� ��ਤ���
-            for(i=310-LineHeight-2*bs;i>k+2*bs;i-=bs) DlgQuatro(&hps,i,245+10*bs,n);
+            for(i=totalrec.yTop-LineHeight-2*bs;i>k+2*bs;i-=bs) DlgQuatro(&hps,i,totalrec.xLeft+10*bs,n);
          if( !bDraw || p == &br || p == &f ) //��������� ��ਤ���
-            for(j=245+bs;j<245+10*bs;j+=bs) DlgQuatro(&hps,k+3*bs,j,br);
+            for(j=totalrec.xLeft+bs;j<totalrec.xLeft+10*bs;j+=bs) DlgQuatro(&hps,k+3*bs,j,br);
          if( !bDraw || p == &r || p == &f || p == &n ) //���㭮�
-            DglKpyr(&hps, k+3*bs, 245+10*bs, r);
+            DglKpyr(&hps, k+3*bs, totalrec.xLeft+10*bs, r);
          if( !bDraw || p == &ba || p == &f || p == &n ) //ࠧ����訩 �ਪ
-            DglKpyr(&hps, k+3*bs, 245+5*bs, ba);
+            DglKpyr(&hps, k+3*bs, totalrec.xLeft+5*bs, ba);
          if( !bDraw || p == &ba || p == &f ) //�ਪ
-            DglKpyr(&hps, 310-LineHeight-5*bs, 245+12*bs, ba);
+            DglKpyr(&hps, totalrec.yTop-LineHeight-5*bs, totalrec.xLeft+12*bs, ba);
          if( !bDraw || p == &h || p == &c ) {//��⭨��
-            DglKpyr(&hps, 310-LineHeight-5*bs, 245, h);
-            DglKpyr(&hps, 310-LineHeight-bs, 245+7*bs, h);}
+            DglKpyr(&hps, totalrec.yTop-LineHeight-5*bs, totalrec.xLeft, h);
+            DglKpyr(&hps, totalrec.yTop-LineHeight-bs, totalrec.xLeft+7*bs, h);}
          if( !bDraw || p == &s ) {//CTPOKA
-            rec.xLeft  = 245; rec.yBottom = 310-LineHeight;
-            rec.yTop = 310;
-            i = (402-245)/bs; i *= bs; rec.xRight = i+245;
+            rec.xLeft  = totalrec.xLeft; rec.yBottom = totalrec.yTop-LineHeight;
+            rec.yTop = totalrec.yTop;
+            i = (totalrec.xRight-totalrec.xLeft)/bs; i *= bs; rec.xRight = i+totalrec.xLeft;
             WinFillRect(hps, &rec, s);}
          if( !bDraw || p == &ch || p == &s ) {//�㪢�
-            GpiSetColor(hps,ch); ptl.x = 255; ptl.y = 310-LineHeight+5;
+            GpiSetColor(hps,ch); ptl.x = totalrec.xLeft+10; ptl.y = totalrec.yTop-LineHeight+5;
             LangText(IDS_PREV_TIME, 20, szFT);
             GpiCharStringAt(hps,&ptl,strlen(szFT),szFT);}
          bDraw = 0;

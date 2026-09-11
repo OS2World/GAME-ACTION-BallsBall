@@ -29,7 +29,7 @@ STRINGTABLE
     40022   "~Charger..."        /* IDS_MEN_LOAD         */
     40023   "~Enregistrer"       /* IDS_MEN_SAVE         */
     40024   "Enregistrer ~sous..." /* IDS_MEN_SAVEAS     */
-    40025   "~Demarrer/~Pause   Entree" /* IDS_MEN_START */
+    40025   "~Pause Jeu\tCtrl+P"       /* IDS_MEN_START */
     40026   "Rec~ords"           /* IDS_MEN_HSCORES      */
     40027   "~Quitter          Esc" /* IDS_MEN_EXIT      */
     40028   "~Options"           /* IDS_MEN_SETTINGS     */
@@ -44,7 +44,7 @@ STRINGTABLE
     40037   "En~glish"           /* IDS_MEN_LANG_EN      */
     40038   "N~ederlands"        /* IDS_MEN_LANG_NL      */
     40039   "Es~panol"           /* IDS_MEN_LANG_ES      */
-    40040   "Toutes les ~options" /* IDS_MEN_SETTINGS_ALL*/
+    40040   "Parametres ~visuels" /* IDS_MEN_SETTINGS_ALL*/
     40041   "~Aide"              /* IDS_MEN_HELP         */
     40042   "Aide ~generale"     /* IDS_MEN_HELPGENERAL  */
     40043   "~Index de l'aide"   /* IDS_MEN_HELPINDEX    */
@@ -53,6 +53,7 @@ STRINGTABLE
     40046   "~A propos"          /* IDS_MEN_HELPPROD     */
     40047   "~Deutsch"           /* IDS_MEN_LANG_DE      */
     40048   "Fran~cais"          /* IDS_MEN_LANG_FR      */
+    40049   "It~alien"           /* IDS_MEN_LANG_IT      */
     40050   "Temps-%d "          /* IDS_FMT_TIME         */
     40051   "Niveau-%d "         /* IDS_FMT_LEVEL        */
     40052   "Points-%d(%d%%)      " /* IDS_FMT_SCORE     */
@@ -60,6 +61,8 @@ STRINGTABLE
     40054   "Sans nom"           /* IDS_NONAME           */
     40055   " - gagnant!"        /* IDS_WINNER           */
     40056   "Avertissement"      /* IDS_TITLE_WARNING    */
+    40057   "~Arriere-plan Actif\tCtrl+B" /* IDS_MEN_BACKGRND   */
+    40058   "~Cadre\tCtrl+F"             /* IDS_MEN_FRAME        */
 }
 
 MESSAGETABLE

@@ -47,6 +47,9 @@
 #include "xtrn.h"
 
 
+static const char bldlevel[] = "@#BALLSBALL:1.3#@ BallsBall for OS/2 Presentation Manager";
+#pragma ref(bldlevel)
+
 /* Global variables */
 HWND hwndMainFrame = NULLHANDLE;    /* handle to the main frame window */
 HWND hwndMain;                      /* handle to the main client window */
@@ -58,7 +61,12 @@ HMQ  hmq;                           /* handle to the process' message queue */
 CHAR szAppName[MAXNAMEL];           /* buffer for application name string */
 CHAR szUntitled[MESSAGELEN];        /* buffer for "Untitled" string */
 BOOL fHelpEnabled;                  /* flag to determine if help is enabled */
-BOOL bStart;//����� �����
+BOOL bStart;
+BOOL bBackgrndRun = FALSE;
+static HWND hwndTitleBar  = NULLHANDLE;
+static HWND hwndSysMenu   = NULLHANDLE;
+static HWND hwndMinMax    = NULLHANDLE;
+static HWND hwndMenuBar   = NULLHANDLE;
 
 /* Entry point declarations */
 
@@ -124,6 +132,10 @@ int main(VOID)
           (PSZ)NULL, MB_OK | MB_ERROR, TRUE);
        return(RETURN_ERROR);}
    hdcMain = WinOpenWindowDC(hwndMain);
+   hwndTitleBar = WinWindowFromID(hwndMainFrame, FID_TITLEBAR);
+   hwndSysMenu  = WinWindowFromID(hwndMainFrame, FID_SYSMENU);
+   hwndMinMax   = WinWindowFromID(hwndMainFrame, FID_MINMAX);
+   hwndMenuBar  = WinWindowFromID(hwndMainFrame, FID_MENU);
    /* ���樠������ ����஥� � ���� */
    bInit = InitPrf();
    ApplyLanguage();
@@ -183,10 +195,11 @@ MRESULT EXPENTRY MainWndProc(HWND hwnd, ULONG msg, MPARAM mp1, MPARAM mp2)
       return (MRESULT)FALSE;
       break;
 
-   case WM_ACTIVATE://���頥� ��� ���頫� �������� �� ��㣨� ����
-         bGame = 0;//��⠭�������� ����
+   case WM_ACTIVATE:
+      if (!bBackgrndRun) {
+         bGame = 0;
          WinStopTimer(hab,hwnd,IDT_MOVE);
-         WinStopTimer(hab,hwnd,IDT_GAME);
+         WinStopTimer(hab,hwnd,IDT_GAME);}
       break;
 
    case WM_BUTTON1DOWN://��誠
@@ -415,7 +428,42 @@ VOID MainCommand(HWND hwnd, MPARAM mp1, MPARAM mp2)
             else{//�᫨ ��� ��⠭������
                bGame = 1;//��ࠥ� �����
                WinStartTimer(hab,hwnd,IDT_MOVE,100);
-               WinStartTimer(hab,hwnd,IDT_GAME,1000);}}break;
+               WinStartTimer(hab,hwnd,IDT_GAME,1000);}
+            WinCheckMenuItem(hwndMenu, IDM_DIRECTION_START, !bGame);
+            WinCheckMenuItem(hwndPopupMenu, IDM_DIRECTION_START, !bGame);}break;
+
+   case IDM_BACKGRND:
+      bBackgrndRun = !bBackgrndRun;
+      WinCheckMenuItem(hwndMenu, IDM_BACKGRND, bBackgrndRun);
+      break;
+
+   case IDM_FRAME_CTRL:
+      {
+         static BOOL bFrameHidden = FALSE;
+         if (!bFrameHidden) {
+            WinSetParent(hwndTitleBar, HWND_OBJECT, FALSE);
+            WinSetParent(hwndSysMenu,  HWND_OBJECT, FALSE);
+            WinSetParent(hwndMinMax,   HWND_OBJECT, FALSE);
+            WinSetParent(hwndMenuBar,  HWND_OBJECT, FALSE);
+            WinSendMsg(hwndMainFrame, WM_UPDATEFRAME,
+               (MPARAM)(FCF_TITLEBAR | FCF_SYSMENU | FCF_MINBUTTON | FCF_MENU), NULL);
+            WinInvalidateRect(hwndMainFrame, NULL, TRUE);
+            WinUpdateWindow(hwndMainFrame);
+            bFrameHidden = TRUE;
+         } else {
+            WinSetParent(hwndTitleBar, hwndMainFrame, FALSE);
+            WinSetParent(hwndSysMenu,  hwndMainFrame, FALSE);
+            WinSetParent(hwndMinMax,   hwndMainFrame, FALSE);
+            WinSetParent(hwndMenuBar,  hwndMainFrame, FALSE);
+            WinSendMsg(hwndMainFrame, WM_UPDATEFRAME,
+               (MPARAM)(FCF_TITLEBAR | FCF_SYSMENU | FCF_MINBUTTON | FCF_MENU), NULL);
+            WinInvalidateRect(hwndMainFrame, NULL, TRUE);
+            WinUpdateWindow(hwndMainFrame);
+            bFrameHidden = FALSE;
+         }
+         WinCheckMenuItem(hwndMenu, IDM_FRAME_CTRL, bFrameHidden);
+      }
+      break;
 
    case IDM_SOUND_ON:
       bSound = 1;/*��� ����祭*/break;
@@ -491,6 +539,7 @@ VOID MainCommand(HWND hwnd, MPARAM mp1, MPARAM mp2)
    case IDM_LANGUAGE_ES:
    case IDM_LANGUAGE_DE:
    case IDM_LANGUAGE_FR:
+   case IDM_LANGUAGE_IT:
       SetLanguage((int)SHORT1FROMMP(mp1)-IDM_LANGUAGE_EN);
       ApplyLanguage();
       UpdateTitleText(hwnd,0); break;

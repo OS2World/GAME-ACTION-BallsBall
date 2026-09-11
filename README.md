@@ -2,6 +2,21 @@ Game-BallsBall
 ==================
 BallsBall is a really simple and addictive game for OS/2. The game objective is to "jail" every ball that's on the loose. To do that you control the green ball to start making walls between the red balls.
 
+VERSION 1.3
+===========
+BallsBall 1.3 adds Italian and standardizes the build:
+
+- Italian (Italiano) added; now six languages: English, Nederlands,
+  Espanol, Deutsch, Francais, Italiano.
+- Menu bar renamed: [~Game] [~Options] [~Help] (was [~File] [S~ettings]).
+- Ctrl+X and F3 exit the game.
+- Build flags: -Oaxt -d0 (optimised release), replacing -od -d2 (debug).
+- Stack raised to 65536 bytes.
+- compile.cmd auto-detects WATCOM (C:\WATCOM or D:\WATCOM), logs to
+  compile-wat.log, exits non-zero on failure.
+- Output directory is now bin\ (was bin-wat\).
+- BLDLEVEL signature added (static const char in main.c).
+
 VERSION 1.2
 ===========
 BallsBall 1.2 is a modernized build of the open-source release 1.1
@@ -34,21 +49,15 @@ COMPILE TOOLS
 
 BUILD (Open Watcom, on OS/2)
 ============================
-Run:
+Open Watcom is auto-detected (C:\WATCOM or D:\WATCOM). Run:
 
-    compile.cmd          (or: wmake -f makefile.wat)
+    compile.cmd
 
-If the WATCOM environment variable is set, it is used for the C include
-path; otherwise the compilers use the headers from their own install.
-The build produces bin-wat\bb.exe (plus bb.map). Run bb.exe from bin-wat
-so the game can create/read its bb.ini and BBHELP.HLP next to itself.
+This logs to compile-wat.log and produces bin\bb.exe (plus bb.map).
+Run bb.exe from bin\ so the game can create/read its bb.ini and
+BBHELP.HLP next to itself.
 
-The original 2002 makefiles (src\bb.mk1, src\bb.tgt, src\ballsball.mk)
-hardcoded f:\ballsball paths and are kept for reference only; the new
-makefile.wat has no hardcoded paths.
-
-Optional help pages (BBHELP.HLP) are compiled from help\bbhelp.ipf and
-copied to bin-wat. The game also runs without them (help is disabled):
+Optional help pages (BBHELP.HLP) are compiled from help\bbhelp.ipf:
 
     wmake -f makefile.wat help
 
@@ -62,15 +71,16 @@ cells stay square.
 
 LANGUAGES
 =========
-The interface is available in English, Dutch, Spanish, German and
-French. Pick one from the Settings > Language menu, or set it in bb.ini:
+The interface is available in English, Nederlands, Espanol, Deutsch,
+Francais and Italiano. Pick one from the Options > Language menu, or
+set it in bb.ini:
 
     [Settings]
     Language=0    (0=English, 1=Nederlands, 2=Espanol, 3=Deutsch,
-                    4=Francais)
+                    4=Francais, 5=Italiano)
 
-All five languages are compiled into the single executable as shifted
-resource namespaces (LANG_BASE_EN..LANG_BASE_FR in src/main.h). The
+All six languages are compiled into the single executable as shifted
+resource namespaces (LANG_BASE_EN..LANG_BASE_IT in src/main.h). The
 strings and dialogs live in src/lang_*.rc and src/dialogs.*.dlg; the
 help pages (BBHELP.HLP) are English only.
 

@@ -19,7 +19,7 @@ ICON IDR_MAIN "bbicon.ico"
 
 MENU IDR_MAIN
 {
-    SUBMENU     "~File", IDM_FILE, MIS_TEXT
+    SUBMENU     "~Game", IDM_FILE, MIS_TEXT
     {
         MENUITEM    "~New Game",        IDM_FILENEW,    MIS_TEXT
         MENUITEM    "~Load Game",       IDM_FILEOPEN,   MIS_TEXT
@@ -27,14 +27,14 @@ MENU IDR_MAIN
         MENUITEM    "~Save Game",       IDM_FILESAVE,   MIS_TEXT
         MENUITEM    "Save Game ~as...", IDM_FILESAVEAS, MIS_TEXT
         MENUITEM SEPARATOR
-        MENUITEM    "Start/~Pause   Enter", IDM_DIRECTION_START,    MIS_TEXT
+        MENUITEM    "~Pause Game\tCtrl+P",  IDM_DIRECTION_START,    MIS_TEXT
         MENUITEM SEPARATOR
         MENUITEM    "Sho~w High Scores",IDM_HIGHSCORES,   MIS_TEXT
         MENUITEM SEPARATOR
-        MENUITEM    "E~xit            Esc", IDM_FILEEXIT,   MIS_TEXT
+        MENUITEM    "E~xit\tF3",       IDM_FILEEXIT,   MIS_TEXT
     }
 
-    SUBMENU     "S~ettings",            IDM_SETTINGS,     MIS_TEXT
+    SUBMENU     "~Options",             IDM_SETTINGS,     MIS_TEXT
     {
         SUBMENU "S~ound",               IDM_SOUND,        MIS_TEXT
            BEGIN
@@ -44,7 +44,7 @@ MENU IDR_MAIN
         SUBMENU "St~yle",               IDM_STYLE,        MIS_TEXT
            BEGIN
            MENUITEM "~2D    F2",        IDM_STYLE_2D,     MIS_TEXT
-           MENUITEM "~3D    F3",        IDM_STYLE_3D,     MIS_TEXT
+           MENUITEM "~3D",              IDM_STYLE_3D,     MIS_TEXT
            END
         SUBMENU "Le~vel",               IDM_LEVEL,        MIS_TEXT
            BEGIN
@@ -69,10 +69,14 @@ MENU IDR_MAIN
            MENUITEM "Es~panol",          IDM_LANGUAGE_ES,  MIS_TEXT
            MENUITEM "~Deutsch",          IDM_LANGUAGE_DE,  MIS_TEXT
            MENUITEM "Fran~cais",         IDM_LANGUAGE_FR,  MIS_TEXT
+           MENUITEM "It~aliano",         IDM_LANGUAGE_IT,  MIS_TEXT
            END
 
         MENUITEM SEPARATOR
-        MENUITEM    "All Se~ttings",    IDM_SETTINGS_ALL, MIS_TEXT
+        MENUITEM    "Visual Se~ttings",    IDM_SETTINGS_ALL, MIS_TEXT
+        MENUITEM SEPARATOR
+        MENUITEM    "~Background Run\tCtrl+B", IDM_BACKGRND,    MIS_TEXT
+        MENUITEM    "~Frame Controls\tCtrl+F", IDM_FRAME_CTRL,  MIS_TEXT
     }
 
 /* Application specific menus go here. */
@@ -94,21 +98,30 @@ MENU POPUP_MENU
    MENUITEM    "~Load Game",       IDM_FILEOPEN,   MIS_TEXT
    MENUITEM    "~Save Game",       IDM_FILESAVE,   MIS_TEXT
    MENUITEM SEPARATOR
-   MENUITEM    "~Start/Pause",     IDM_DIRECTION_START,    MIS_TEXT
+   MENUITEM    "~Pause Game",      IDM_DIRECTION_START,    MIS_TEXT
    MENUITEM SEPARATOR
    MENUITEM "Sound O~n",           IDM_SOUND_ON,   MIS_TEXT
    MENUITEM "Sound O~ff",          IDM_SOUND_OFF,  MIS_TEXT
    MENUITEM SEPARATOR
-   MENUITEM    "E~xit",   IDM_FILEEXIT,   MIS_TEXT
+   MENUITEM    "E~xit\tF3",   IDM_FILEEXIT,   MIS_TEXT
 }
 
 ACCELTABLE IDR_MAIN
 {
-    VK_BACKSPACE,   IDM_FILEEXIT,      VIRTUALKEY,    ALT
-    VK_DELETE,      IDM_FILEEXIT,      VIRTUALKEY,    SHIFT
-    VK_INSERT,      IDM_FILEEXIT,      VIRTUALKEY,    CONTROL
-    VK_INSERT,      IDM_FILEEXIT,      VIRTUALKEY,    SHIFT
-    VK_DELETE,      IDM_FILEEXIT,      VIRTUALKEY
+    VK_F3,          IDM_FILEEXIT,         VIRTUALKEY
+    "x",            IDM_FILEEXIT,         CONTROL
+    "X",            IDM_FILEEXIT,         CONTROL
+    VK_BACKSPACE,   IDM_FILEEXIT,         VIRTUALKEY,    ALT
+    VK_DELETE,      IDM_FILEEXIT,         VIRTUALKEY,    SHIFT
+    VK_INSERT,      IDM_FILEEXIT,         VIRTUALKEY,    CONTROL
+    VK_INSERT,      IDM_FILEEXIT,         VIRTUALKEY,    SHIFT
+    VK_DELETE,      IDM_FILEEXIT,         VIRTUALKEY
+    "p",            IDM_DIRECTION_START,  CONTROL
+    "P",            IDM_DIRECTION_START,  CONTROL
+    "b",            IDM_BACKGRND,         CONTROL
+    "B",            IDM_BACKGRND,         CONTROL
+    "f",            IDM_FRAME_CTRL,       CONTROL
+    "F",            IDM_FRAME_CTRL,       CONTROL
 }
 
 STRINGTABLE
@@ -122,33 +135,36 @@ STRINGTABLE
     IDS_UNTITLED                "Untitled"
     IDS_TITLEBARSEPARATOR       " - "
     IDS_OBJECTCLASS             "Object Class"
-    IDS_MEN_FILE                "~File"
+    IDS_MEN_FILE                "~Game"
     IDS_MEN_NEW                 "~New Game"
     IDS_MEN_LOAD                "~Load Game"
     IDS_MEN_SAVE                "~Save Game"
     IDS_MEN_SAVEAS              "Save Game ~as..."
-    IDS_MEN_START               "Start/~Pause   Enter"
+    IDS_MEN_START               "~Pause Game\tCtrl+P"
     IDS_MEN_HSCORES             "Sho~w High Scores"
-    IDS_MEN_EXIT                "E~xit            Esc"
-    IDS_MEN_SETTINGS            "S~ettings"
+    IDS_MEN_EXIT                "E~xit\tF3"
+    IDS_MEN_SETTINGS            "~Options"
     IDS_MEN_SOUND               "S~ound"
     IDS_MEN_SOUNDON             "O~n"
     IDS_MEN_SOUNDOFF            "O~ff"
     IDS_MEN_STYLE               "St~yle"
     IDS_MEN_STYLE2D             "~2D    F2"
-    IDS_MEN_STYLE3D             "~3D    F3"
+    IDS_MEN_STYLE3D             "~3D"
     IDS_MEN_LEVEL               "Le~vel"
     IDS_MEN_LANGUAGE            "L~anguage"
     IDS_MEN_LANG_EN             "En~glish"
     IDS_MEN_LANG_NL             "N~ederlands"
     IDS_MEN_LANG_ES             "Es~panol"
-    IDS_MEN_SETTINGS_ALL        "All Se~ttings"
+    IDS_MEN_SETTINGS_ALL        "Visual Se~ttings"
     IDS_MEN_HELP                "~Help"
     IDS_MEN_HELPGENERAL         "~General help"
     IDS_MEN_HELPINDEX           "Help ~index"
     IDS_MEN_HELPUSING           "~Using help"
     IDS_MEN_HELPKEYS            "~Keys help"
     IDS_MEN_HELPPROD            "P~roduct information"
+    IDS_MEN_LANG_DE             "~Deutsch"
+    IDS_MEN_LANG_FR             "Fran~cais"
+    IDS_MEN_LANG_IT             "It~aliano"
     IDS_FMT_TIME                "Time-%d "
     IDS_FMT_LEVEL               "Level-%d "
     IDS_FMT_SCORE               "Score-%d(%d%%)      "
@@ -156,6 +172,8 @@ STRINGTABLE
     IDS_NONAME                  "Noname"
     IDS_WINNER                  " - winner!"
     IDS_TITLE_WARNING           "Warning"
+    IDS_MEN_BACKGRND            "~Background Run\tCtrl+B"
+    IDS_MEN_FRAME               "~Frame Controls\tCtrl+F"
 }
 
 MESSAGETABLE
@@ -198,5 +216,7 @@ rcinclude lang_nl.rc
 rcinclude lang_es.rc
 rcinclude lang_de.rc
 rcinclude lang_fr.rc
+rcinclude lang_it.rc
+rcinclude dialogs.it.dlg
 /***************************  End of main.rc ****************************/
 

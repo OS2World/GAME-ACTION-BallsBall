@@ -1,0 +1,8 @@
+# build output
+bin/
+compile-wat.log
+
+# stray artifacts
+*.err
+*.map
+*.sym

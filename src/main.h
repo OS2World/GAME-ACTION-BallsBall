@@ -64,6 +64,9 @@
 #define IDM_LANGUAGE_ES                2503
 #define IDM_LANGUAGE_DE                2504
 #define IDM_LANGUAGE_FR                2505
+#define IDM_LANGUAGE_IT                2506
+#define IDM_BACKGRND                   2600
+#define IDM_FRAME_CTRL                 2700
 
 #define IDM_HELP			               9000
 #define IDM_HELPUSINGHELP		         9100
@@ -114,6 +117,7 @@
 #define IDS_MEN_HELPPROD               46
 #define IDS_MEN_LANG_DE                47
 #define IDS_MEN_LANG_FR                48
+#define IDS_MEN_LANG_IT                49
 /* Painted status line and misc strings */
 #define IDS_FMT_TIME                   50
 #define IDS_FMT_LEVEL                  51
@@ -122,17 +126,21 @@
 #define IDS_NONAME                     54
 #define IDS_WINNER                     55
 #define IDS_TITLE_WARNING              56
+#define IDS_MEN_BACKGRND               57
+#define IDS_MEN_FRAME                  58
 /* Language resource namespaces (single exe, shifted resource ids) */
 #define LANG_BASE_EN                   0
 #define LANG_BASE_NL                   10000
 #define LANG_BASE_ES                   20000
 #define LANG_BASE_DE                   30000
 #define LANG_BASE_FR                   40000
+#define LANG_BASE_IT                   50000
 #define LANG_EN                        0
 #define LANG_NL                        1
 #define LANG_ES                        2
 #define LANG_DE                        3
 #define LANG_FR                        4
+#define LANG_IT                        5
 /* Messagetable ids */
 #define IDMSG_INITFAILED	            1
 #define IDMSG_MAINWINCREATEFAILED      2

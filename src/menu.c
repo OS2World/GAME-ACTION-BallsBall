@@ -274,11 +274,12 @@ VOID MenuRedraw(int iMenu)
          MM_SETITEMATTR,(MPARAM)IDM_LEVEL_11,
          MPFROM2SHORT(MIA_CHECKED,MIA_CHECKED)); break;
 
-   case -21://����
-   case -22://�������,���
-   case -23://��������,���
-   case -24://��������,���
-   case -25://��������,���
+   case -21://EN
+   case -22://NL
+   case -23://ES
+   case -24://DE
+   case -25://FR
+   case -26://IT
       WinSendMsg(hwndMenu,//㡨ࠥ� ������
          MM_SETITEMATTR,(MPARAM)IDM_LANGUAGE_EN,
          MPFROM2SHORT(MIA_CHECKED,0));
@@ -291,10 +292,13 @@ VOID MenuRedraw(int iMenu)
       WinSendMsg(hwndMenu,//㡨ࠥ� ������
          MM_SETITEMATTR,(MPARAM)IDM_LANGUAGE_DE,
          MPFROM2SHORT(MIA_CHECKED,0));
-      WinSendMsg(hwndMenu,//㡨ࠥ� ������
+      WinSendMsg(hwndMenu,
          MM_SETITEMATTR,(MPARAM)IDM_LANGUAGE_FR,
          MPFROM2SHORT(MIA_CHECKED,0));
-      WinSendMsg(hwndMenu,//�⠢�� ������
+      WinSendMsg(hwndMenu,
+         MM_SETITEMATTR,(MPARAM)IDM_LANGUAGE_IT,
+         MPFROM2SHORT(MIA_CHECKED,0));
+      WinSendMsg(hwndMenu,
          MM_SETITEMATTR,(MPARAM)(IDM_LANGUAGE_EN+iLang),
          MPFROM2SHORT(MIA_CHECKED,MIA_CHECKED)); break;
 
@@ -342,7 +346,10 @@ static void MenuSetLanguage(HWND hwndM)
    LSET(IDM_LANGUAGE_ES,IDS_MEN_LANG_ES)
    LSET(IDM_LANGUAGE_DE,IDS_MEN_LANG_DE)
    LSET(IDM_LANGUAGE_FR,IDS_MEN_LANG_FR)
+   LSET(IDM_LANGUAGE_IT,IDS_MEN_LANG_IT)
    LSET(IDM_SETTINGS_ALL,IDS_MEN_SETTINGS_ALL)
+   LSET(IDM_BACKGRND,   IDS_MEN_BACKGRND)
+   LSET(IDM_FRAME_CTRL, IDS_MEN_FRAME)
    LSET(IDM_HELP,    IDS_MEN_HELP)
    LSET(IDM_HELPGENERAL,IDS_MEN_HELPGENERAL)
    LSET(IDM_HELPINDEX,IDS_MEN_HELPINDEX)
