@@ -50,7 +50,7 @@ STRINGTABLE
     40043   "~Index de l'aide"   /* IDS_MEN_HELPINDEX    */
     40044   "Utiliser l'~aide"   /* IDS_MEN_HELPUSING    */
     40045   "~Touches"           /* IDS_MEN_HELPKEYS     */
-    40046   "~A propos"          /* IDS_MEN_HELPPROD     */
+    40046   "~About..."          /* IDS_MEN_HELPPROD     */
     40047   "~Deutsch"           /* IDS_MEN_LANG_DE      */
     40048   "Fran~cais"          /* IDS_MEN_LANG_FR      */
     40049   "It~alien"           /* IDS_MEN_LANG_IT      */

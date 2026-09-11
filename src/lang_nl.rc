@@ -49,7 +49,7 @@ STRINGTABLE
     10043   "Help-~index"        /* IDS_MEN_HELPINDEX    */
     10044   "Help ~gebruiken"    /* IDS_MEN_HELPUSING    */
     10045   "Help bij ~toetsen"  /* IDS_MEN_HELPKEYS     */
-    10046   "Inf~o"              /* IDS_MEN_HELPPROD     */
+    10046   "~About..."          /* IDS_MEN_HELPPROD     */
     10047   "~Duits"             /* IDS_MEN_LANG_DE      */
     10048   "Fr~ans"             /* IDS_MEN_LANG_FR      */
     10049   "It~aliaans"         /* IDS_MEN_LANG_IT      */

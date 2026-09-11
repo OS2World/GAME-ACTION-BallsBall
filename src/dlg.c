@@ -77,46 +77,20 @@ MRESULT EXPENTRY ProductInfoDlgProc(
 			 USHORT msg,	 /* id of message */
 			 MPARAM mp1,	 /* first message parameter */
 			 MPARAM mp2)	 /* second message parameter */
-{  SWP swpDESKTOP;//����砫�� ���न��� � ࠧ��஢ DESKTOPa
-
+{
    switch(msg) {
-      case WM_INITDLG:
-         WinQueryWindowPos(HWND_DESKTOP,&swpDESKTOP);
-         WinSetWindowPos(
-            hwnd,//�� �㤥� �ந��
-            HWND_TOP,//�������� ���
-            (swpDESKTOP.cx-424)/2,//x ���न��� ����
-            (swpDESKTOP.cy-364)/2,//y ���न��� ����
-            424,//x ࠧ���
-            364,//y ࠧ���
-            SWP_SIZE | SWP_MOVE );
-         WinSetWindowPos(
-            WinWindowFromID(hwnd,DID_OK),//�� �㤥� �ந��
-            HWND_TOP,//�������� ���
-            6,//x ���न��� ����
-            6,//y ���न��� ����
-            412,//x ࠧ���
-            32,//y ࠧ���
-            SWP_SIZE | SWP_MOVE );
-         WinSetWindowPos(
-            WinWindowFromID(hwnd,IDA_BITMAP),//�� �㤥� �ந��
-            HWND_TOP,//�������� ���
-            6,//x ���न��� ����
-            40,//y ���न��� ����
-            412,//x ࠧ���
-            300,//y ࠧ���
-            SWP_SIZE | SWP_MOVE );
-         SetSysMenu(hwnd); /* system menu for this dialog */
-	      return MRFROMSHORT(FALSE);
-
-     case WM_CHAR://����⨥ ������
-     case WM_COMMAND:
-	   /* no matter what the command, close the dialog */
-	       WinDismissDlg(hwnd, TRUE); break;
-
-      default: return(WinDefDlgProc(hwnd, msg, mp1, mp2)); break; }
+      case WM_COMMAND:
+         switch (COMMANDMSG(&msg)->cmd) {
+            case DID_OK:
+            case DID_CANCEL:
+               WinDismissDlg(hwnd, TRUE);
+               return (MRESULT)NULL;
+         }
+         break;
+      default: return(WinDefDlgProc(hwnd, msg, mp1, mp2));
+   }
    return (MRESULT)NULL;
-}   /*	End of ProductInfoDlgProc   */
+}   /* End of ProductInfoDlgProc */
 /**************************************************************************
  *
  *  Name       : SetSysMenu(hDlg)

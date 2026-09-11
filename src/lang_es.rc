@@ -50,7 +50,7 @@ STRINGTABLE
     20043   "Ayuda al ~indice"   /* IDS_MEN_HELPINDEX    */
     20044   "~Usar la Ayuda"     /* IDS_MEN_HELPUSING    */
     20045   "Ayuda de ~teclas"   /* IDS_MEN_HELPKEYS     */
-    20046   "~Informacion del producto" /* IDS_MEN_HELPPROD */
+    20046   "~About..."          /* IDS_MEN_HELPPROD     */
     20047   "~Aleman"            /* IDS_MEN_LANG_DE      */
     20048   "~Frances"           /* IDS_MEN_LANG_FR      */
     20049   "It~aliano"          /* IDS_MEN_LANG_IT      */

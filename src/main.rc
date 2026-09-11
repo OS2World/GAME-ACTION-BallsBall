@@ -87,7 +87,7 @@ MENU IDR_MAIN
         MENUITEM    "~Using help",       IDM_HELPUSINGHELP,  MIS_TEXT
         MENUITEM    "~Keys help",        IDM_HELPKEYS,       MIS_TEXT
         MENUITEM SEPARATOR
-        MENUITEM    "P~roduct information",  IDM_HELPPRODUCTINFO, MIS_TEXT
+        MENUITEM    "~About...",             IDM_HELPPRODUCTINFO, MIS_TEXT
     }
 }
 
@@ -161,7 +161,7 @@ STRINGTABLE
     IDS_MEN_HELPINDEX           "Help ~index"
     IDS_MEN_HELPUSING           "~Using help"
     IDS_MEN_HELPKEYS            "~Keys help"
-    IDS_MEN_HELPPROD            "P~roduct information"
+    IDS_MEN_HELPPROD            "~About..."
     IDS_MEN_LANG_DE             "~Deutsch"
     IDS_MEN_LANG_FR             "Fran~cais"
     IDS_MEN_LANG_IT             "It~aliano"

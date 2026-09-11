@@ -557,9 +557,9 @@ VOID MainCommand(HWND hwnd, MPARAM mp1, MPARAM mp2)
       HelpKeys(); break;
 
    case IDM_HELPPRODUCTINFO:
-WinDlgBox(HWND_DESKTOP, hwndMain,
- 	        (PFNWP)ProductInfoDlgProc, 0,
- 	        iLangBase+DLG_ABOUTTHISPROGRAM, (PVOID)NULL);
+      WinDlgBox(HWND_DESKTOP, hwndMain,
+                (PFNWP)ProductInfoDlgProc, 0,
+                DLG_ABOUTTHISPROGRAM, (PVOID)NULL);
       break;
 
    default: break;
