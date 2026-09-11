@@ -2,6 +2,8 @@ Game-BallsBall
 ==================
 BallsBall is a really simple and addictive game for OS/2. The game objective is to "jail" every ball that's on the loose. To do that you control the green ball to start making walls between the red balls.
 
+![BallsBall ScreenShot](/doc/BallsBall.png)
+
 VERSION 1.3
 ===========
 BallsBall 1.3 adds Italian and standardizes the build:
@@ -12,10 +14,11 @@ BallsBall 1.3 adds Italian and standardizes the build:
 - Ctrl+X and F3 exit the game.
 - Build flags: -Oaxt -d0 (optimised release), replacing -od -d2 (debug).
 - Stack raised to 65536 bytes.
-- compile.cmd auto-detects WATCOM (C:\WATCOM or D:\WATCOM), logs to
+- compile.cmd auto-detects WATCOM (C:\\WATCOM or D:\\WATCOM), logs to
   compile-wat.log, exits non-zero on failure.
-- Output directory is now bin\ (was bin-wat\).
+- Output directory is now bin\\ (was bin-wat\\).
 - BLDLEVEL signature added (static const char in main.c).
+
 
 VERSION 1.2
 ===========
@@ -40,7 +43,7 @@ BallsBall 1.2 is a modernized build of the open-source release 1.1
 
 LICENSE
 ========
-GNU GPL V2
+GNU GPL V2 or later
 
 COMPILE TOOLS
 =============
@@ -87,3 +90,7 @@ help pages (BBHELP.HLP) are English only.
 AUTHORS
 ============
 - Dmitry Ivanov
+- Martin Iturbide (Update 2026)
+
+## LINKS
+* https://github.com/OS2World/GAME-ACTION-BallsBall
