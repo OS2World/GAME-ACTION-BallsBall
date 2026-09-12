@@ -22,7 +22,7 @@ CFLAGS = -bt=os2 -5r -mf -Oaxt -d0 -zq -w4 -e25 -i=$(SRC)
 
 HEADERS = $(SRC)\game.h $(SRC)\main.h $(SRC)\dlg.h $(SRC)\help.h $(SRC)\xtrn.h
 
-all : $(BIN)\bb.exe
+all : $(BIN)\bb.exe $(BIN)\bbhelp.hlp
 
 $(BIN)\bb.exe : $(BIN)\dlg.obj $(BIN)\file.obj $(BIN)\help.obj $(BIN)\init.obj $(BIN)\main.obj $(BIN)\menu.obj $(BIN)\move.obj $(BIN)\pnt.obj $(BIN)\main.res
 	wlink system os2v2_pm name $(BIN)\bb op q op map op maxe=25 op stack=65536 op heap=4096 file $(BIN)\dlg.obj, $(BIN)\file.obj, $(BIN)\help.obj, $(BIN)\init.obj, $(BIN)\main.obj, $(BIN)\menu.obj, $(BIN)\move.obj, $(BIN)\pnt.obj
