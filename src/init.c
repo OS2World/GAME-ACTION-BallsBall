@@ -68,6 +68,7 @@ long CLR_CHAR;   //梥� �㪢
 BOOL bNew; //����塞 ����
 BOOL bGame;//���� ���
 BOOL bStyle;//2d ��� 3d
+BOOL bSaveOnExit = TRUE;/* save the settings when the game ends (default on) */
 BOOL bSound;//���
 BOOL bHalt;//��⠭���� ��᫥ �ਡ����
 USHORT usLevel;//�஢���
@@ -126,6 +127,8 @@ BOOL Init(VOID)
 {  HINI hinii;//��� �� �듬����
    ULONG cb    = sizeof(szIniFile); // size of the profile path buffer
    PSZ   pSlash;                    // last backslash in the exe path
+   PTIB  ptib;
+   PPIB  ppib;
 
    if(DosExitList(EXLST_ADD, (PFNEXITLIST)ExitProc)) {
       MessageBox(HWND_DESKTOP, IDMSG_CANNOTLOADEXITLIST,
@@ -133,7 +136,8 @@ BOOL Init(VOID)
       DosExit(EXIT_PROCESS, RETURN_ERROR); }
    /* anchor bb.ini next to the executable so the working directory
       does not matter when the game is started */
-   if(DosQueryModuleName((HMODULE)NULL, cb, szIniFile) ||
+   DosGetInfoBlocks(&ptib, &ppib);
+   if(DosQueryModuleName(ppib->pib_hmte, cb, szIniFile) ||
       (pSlash = strrchr(szIniFile, '\\')) == NULL)
       strncpy(szIniFile, "bb.ini", cb - 1);
    else
@@ -335,6 +339,7 @@ BOOL InitPrf()
       CLR_CHAR    = PrfQueryProfileInt(hini,"Colors","Color of chars",CLR_WHITE);//梥� �㪢
       bStyle = PrfQueryProfileInt(hini,"Settings","Style(2D/3D)",1);//3d
       bSound = PrfQueryProfileInt(hini,"Settings","Sound",1);//��� ����祭
+      bSaveOnExit = PrfQueryProfileInt(hini,"Settings","SaveOnExit",1) ? TRUE : FALSE;
       bHalt  = PrfQueryProfileInt(hini,"Settings","Halt",1);//��⠭����������
       iHScore = PrfQueryProfileInt(hini,"High Scores","10",0);/*������ � ����⪥*/
       PrfCloseProfile(hini);
@@ -400,6 +405,7 @@ BOOL InitPrf()
    CLR_CHAR    = CLR_WHITE;   //梥� �㪢
    bStyle  = 1;//3d
    bSound  = 1;//��� ����祭
+   bSaveOnExit = TRUE;
    bHalt   = 1;//��⠭����������
    iHScore = 0;/*������ � ����⪥*/ return 0;
    }   /* End of InitPrf	  */
@@ -539,6 +545,9 @@ VOID ClosePrf()
    SWP swpMain;//����砫�� ���न��� � ࠧ��஢ ����
 
    if((hini = PrfOpenProfile(hab,szIniFile))){
+      sprintf(szMsg,"%d",bSaveOnExit ? 1 : 0);
+      PrfWriteProfileString(hini,"Settings","SaveOnExit",szMsg);
+      if(!bSaveOnExit){PrfCloseProfile(hini);return;}
       WinQueryWindowPos(hwndMainFrame,&swpMain);
       sprintf(szMsg,"%d",swpMain.x);
       PrfWriteProfileString(hini,"Place","MainX",szMsg);

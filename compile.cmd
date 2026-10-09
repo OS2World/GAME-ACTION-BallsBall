@@ -1,17 +1,22 @@
 @echo off
 set LOGFILE=compile-wat.log
 echo Build started: %DATE% %TIME% > %LOGFILE%
-if exist C:\WATCOM\bin\wcc386.exe set WATCOM=C:\WATCOM
-if exist D:\WATCOM\bin\wcc386.exe set WATCOM=D:\WATCOM
+if "%WATCOM%"=="" (
+    if exist C:\WATCOM\binp\wcc386.exe set WATCOM=C:\WATCOM
+    if exist D:\WATCOM\binp\wcc386.exe set WATCOM=D:\WATCOM
+)
 if "%WATCOM%"=="" (
     echo ERROR: Open Watcom not found. Set WATCOM environment variable. >> %LOGFILE%
     echo ERROR: Open Watcom not found. Set WATCOM environment variable.
     exit /b 1
 )
-set INCLUDE=%WATCOM%\h;%WATCOM%\h\os2
-set PATH=%WATCOM%\bin;%PATH%
+if "%OS2TK%"=="" set OS2TK=C:\OS2TK45
+set PATH=%WATCOM%\binp;%WATCOM%\binw;%PATH%
+set BEGINLIBPATH=%WATCOM%\binp\dll
+set INCLUDE=%WATCOM%\h;%WATCOM%\h\os2;%OS2TK%\h;%INCLUDE%
+set LIB=%WATCOM%\lib386;%WATCOM%\lib386\os2;%OS2TK%\lib;%LIB%
 echo Using WATCOM=%WATCOM% >> %LOGFILE%
-wmake -f makefile.wat clean >> %LOGFILE%
+wmake -f makefile.wat clean >> %LOGFILE% 2>&1
 if not exist bin md bin
 wmake -f makefile.wat all >> %LOGFILE% 2>&1
 if errorlevel 1 goto :failed

@@ -32,6 +32,9 @@
 /* Include files, macros, defined constants, and externs */
 
 #define	 INCL_WINHELP
+#define	 INCL_DOSFILEMGR
+#define	 INCL_DOSMODULEMGR
+#define	 INCL_DOSPROCESS
 
 #include <os2.h>
 #include <string.h>
@@ -44,12 +47,37 @@
 
 /* Global variables */
 static HWND hwndHelpInstance;
-static CHAR szLibName[HELPLIBRARYNAMELEN];
+static CHAR szLibName[CCHMAXPATH];
 static CHAR szWindowTitle[HELPLIBRARYNAMELEN];
 
 /* Entry point declarations */
 //MRESULT EXPENTRY ProductInfoDlgProc(HWND hwnd,
 //				    ULONG msg, MPARAM mp1, MPARAM mp2);
+/* The help file is looked for in <exe dir>\help\ first, then in the exe dir;
+   szLibName gets the full name (or the bare name if it is found nowhere) */
+static VOID FindHelpFile(PSZ pszName)
+{  CHAR szDir[CCHMAXPATH];
+   FILESTATUS3 fs;
+   PSZ pSlash;
+   PTIB ptib;
+   PPIB ppib;
+
+   strcpy(szLibName, (char *)pszName);
+   DosGetInfoBlocks(&ptib, &ppib);
+   if(DosQueryModuleName(ppib->pib_hmte, sizeof(szDir), szDir) ||
+      (pSlash = strrchr(szDir, '\\')) == NULL)
+      return;
+   pSlash[1] = 0;
+   if(strlen(szDir) + 5 + strlen((char *)pszName) >= CCHMAXPATH)
+      return;
+   strcpy(szLibName, szDir); strcat(szLibName, "help\\"); strcat(szLibName, (char *)pszName);
+   if(!DosQueryPathInfo(szLibName, FIL_STANDARD, &fs, sizeof(fs)))
+      return;
+   strcpy(szLibName, szDir); strcat(szLibName, (char *)pszName);
+   if(DosQueryPathInfo(szLibName, FIL_STANDARD, &fs, sizeof(fs)))
+      strcpy(szLibName, (char *)pszName);
+}
+
 /**************************************************************************
  *
  *  Name       : InitHelp()
@@ -68,6 +96,7 @@ static CHAR szWindowTitle[HELPLIBRARYNAMELEN];
  *************************************************************************/
 VOID InitHelp(VOID)
 {  HELPINIT hini;
+   CHAR szHlpName[HELPLIBRARYNAMELEN];
 
    /* if we return because of an error, Help will be disabled */
    fHelpEnabled = FALSE;
@@ -86,7 +115,7 @@ VOID InitHelp(VOID)
 
    if(!WinLoadString(hab,
 		     (HMODULE)0,
-		     IDS_HELPWINDOWTITLE,
+		     iLangBase+IDS_HELPWINDOWTITLE,
 		     HELPLIBRARYNAMELEN,
 		     (PSZ)szWindowTitle)){
       MessageBox(hwndMain, IDMSG_CANNOTLOADSTRING,
@@ -103,11 +132,12 @@ VOID InitHelp(VOID)
 
    if(!WinLoadString(hab,
 		     (HMODULE)0,
-		     IDS_HELPLIBRARYNAME,
+		     iLangBase+IDS_HELPLIBRARYNAME,
 		     HELPLIBRARYNAMELEN,
-		     (PSZ)szLibName)) {
+		     (PSZ)szHlpName)) {
       MessageBox(hwndMain, IDMSG_CANNOTLOADSTRING,
          (PSZ)NULL, MB_OK | MB_ERROR, FALSE); return; }
+   FindHelpFile(szHlpName);
 
    hini.pszHelpLibraryName = (PSZ)szLibName;
 
@@ -288,6 +318,7 @@ VOID DestroyHelpInstance(VOID)
 {
    if(hwndHelpInstance != NULLHANDLE)
       WinDestroyHelpInstance(hwndHelpInstance);
+   hwndHelpInstance = NULLHANDLE;
 }   /* End of DestroyHelpInstance   */
 /***************************  End of help.c  ****************************/
 

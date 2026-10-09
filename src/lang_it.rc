@@ -19,18 +19,20 @@ STRINGTABLE
 {
     50001   "*.bbg"              /* IDS_FILEOPENEXT      */
     50002   "PalleBall"          /* IDS_APPNAME          */
+    50003   "BBHELP_IT.HLP"   /* IDS_HELPLIBRARYNAME */
+    50005   "Aiuto di BallsBall"   /* IDS_HELPWINDOWTITLE */
     50004   "Apri partita"       /* IDS_OPEN             */
     50006   "Salva partita"      /* IDS_SAVE             */
     50007   "Senza nome"         /* IDS_UNTITLED         */
     50008   " - "                /* IDS_TITLEBARSEPARATOR*/
     50009   "Classe oggetto"     /* IDS_OBJECTCLASS      */
     50020   "~Gioco"             /* IDS_MEN_FILE         */
-    50021   "~Nuova partita"     /* IDS_MEN_NEW          */
+    50021   "~Nuova partita\tCtrl+N"     /* IDS_MEN_NEW          */
     50022   "~Apri..."           /* IDS_MEN_LOAD         */
     50023   "~Salva"             /* IDS_MEN_SAVE         */
     50024   "Salva ~come..."     /* IDS_MEN_SAVEAS       */
     50025   "~Pausa Gioco\tCtrl+P"  /* IDS_MEN_START     */
-    50026   "~Record"            /* IDS_MEN_HSCORES      */
+    50026   "~Record\tCtrl+H"            /* IDS_MEN_HSCORES      */
     50027   "~Esci            Esc" /* IDS_MEN_EXIT       */
     50028   "~Opzioni"           /* IDS_MEN_SETTINGS     */
     50029   "~Suono"             /* IDS_MEN_SOUND        */
@@ -44,7 +46,7 @@ STRINGTABLE
     50037   "In~glese"           /* IDS_MEN_LANG_EN      */
     50038   "O~landese"          /* IDS_MEN_LANG_NL      */
     50039   "S~pagnolo"          /* IDS_MEN_LANG_ES      */
-    50040   "Impostazioni ~visive" /* IDS_MEN_SETTINGS_ALL */
+    50040   "Impostazioni ~visive..." /* IDS_MEN_SETTINGS_ALL */
     50041   "~Aiuto"             /* IDS_MEN_HELP         */
     50042   "~Aiuto generale"    /* IDS_MEN_HELPGENERAL  */
     50043   "~Indice aiuto"      /* IDS_MEN_HELPINDEX    */
@@ -63,6 +65,7 @@ STRINGTABLE
     50056   "Avviso"             /* IDS_TITLE_WARNING    */
     50057   "~Sfondo Attivo\tCtrl+B"     /* IDS_MEN_BACKGRND     */
     50058   "~Controlli Cornice\tCtrl+F" /* IDS_MEN_FRAME        */
+    50059   "~Salva impostazioni all'uscita" /* IDS_MEN_SAVEONEXIT */
 }
 
 MESSAGETABLE

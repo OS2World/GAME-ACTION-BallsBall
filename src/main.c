@@ -47,7 +47,7 @@
 #include "xtrn.h"
 
 
-static const char bldlevel[] = "@#BALLSBALL:1.3#@ BallsBall for OS/2 Presentation Manager";
+static const char bldlevel[] = "@#BALLSBALL:1.4#@ BallsBall for OS/2 Presentation Manager";
 #pragma ref(bldlevel)
 
 /* Global variables */
@@ -138,6 +138,7 @@ int main(VOID)
    hwndMenuBar  = WinWindowFromID(hwndMainFrame, FID_MENU);
    /* ���樠������ ����஥� � ���� */
    bInit = InitPrf();
+   WinCheckMenuItem(hwndMenuBar, IDM_SAVEONEXIT, bSaveOnExit);
    ApplyLanguage();
    InitFont( hdcMain); bStart = 1;
    /* ��������� ࠧ��஢ �������� ���� */
@@ -434,34 +435,52 @@ VOID MainCommand(HWND hwnd, MPARAM mp1, MPARAM mp2)
 
    case IDM_BACKGRND:
       bBackgrndRun = !bBackgrndRun;
-      WinCheckMenuItem(hwndMenu, IDM_BACKGRND, bBackgrndRun);
+      WinCheckMenuItem(hwndMenuBar, IDM_BACKGRND, bBackgrndRun);
+      break;
+
+   case IDM_SAVEONEXIT:
+      bSaveOnExit = !bSaveOnExit;
+      WinCheckMenuItem(hwndMenuBar, IDM_SAVEONEXIT, bSaveOnExit);
       break;
 
    case IDM_FRAME_CTRL:
       {
          static BOOL bFrameHidden = FALSE;
+         RECTL rclClient;
+         SWP   swpFrame;
+         LONG  cxNew, cyNew;
+
+         /* the game area keeps its size: only the frame around it changes */
+         WinQueryWindowRect(hwndMain, &rclClient);
+         WinQueryWindowPos(hwndMainFrame, &swpFrame);
+
          if (!bFrameHidden) {
             WinSetParent(hwndTitleBar, HWND_OBJECT, FALSE);
             WinSetParent(hwndSysMenu,  HWND_OBJECT, FALSE);
             WinSetParent(hwndMinMax,   HWND_OBJECT, FALSE);
             WinSetParent(hwndMenuBar,  HWND_OBJECT, FALSE);
-            WinSendMsg(hwndMainFrame, WM_UPDATEFRAME,
-               (MPARAM)(FCF_TITLEBAR | FCF_SYSMENU | FCF_MINBUTTON | FCF_MENU), NULL);
-            WinInvalidateRect(hwndMainFrame, NULL, TRUE);
-            WinUpdateWindow(hwndMainFrame);
             bFrameHidden = TRUE;
          } else {
             WinSetParent(hwndTitleBar, hwndMainFrame, FALSE);
             WinSetParent(hwndSysMenu,  hwndMainFrame, FALSE);
             WinSetParent(hwndMinMax,   hwndMainFrame, FALSE);
             WinSetParent(hwndMenuBar,  hwndMainFrame, FALSE);
-            WinSendMsg(hwndMainFrame, WM_UPDATEFRAME,
-               (MPARAM)(FCF_TITLEBAR | FCF_SYSMENU | FCF_MINBUTTON | FCF_MENU), NULL);
-            WinInvalidateRect(hwndMainFrame, NULL, TRUE);
-            WinUpdateWindow(hwndMainFrame);
             bFrameHidden = FALSE;
          }
-         WinCheckMenuItem(hwndMenu, IDM_FRAME_CTRL, bFrameHidden);
+         WinSendMsg(hwndMainFrame, WM_UPDATEFRAME,
+            (MPARAM)(FCF_TITLEBAR | FCF_SYSMENU | FCF_MINBUTTON | FCF_MENU), NULL);
+
+         /* frame size for the same client area; the top edge stays where it is */
+         WinCalcFrameRect(hwndMainFrame, &rclClient, FALSE);
+         cxNew = rclClient.xRight - rclClient.xLeft;
+         cyNew = rclClient.yTop - rclClient.yBottom;
+         WinSetWindowPos(hwndMainFrame, HWND_TOP,
+            swpFrame.x, swpFrame.y + swpFrame.cy - cyNew, cxNew, cyNew,
+            SWP_SIZE | SWP_MOVE);
+
+         WinInvalidateRect(hwndMainFrame, NULL, TRUE);
+         WinUpdateWindow(hwndMainFrame);
+         WinCheckMenuItem(hwndMenuBar, IDM_FRAME_CTRL, bFrameHidden);
       }
       break;
 
@@ -541,6 +560,7 @@ VOID MainCommand(HWND hwnd, MPARAM mp1, MPARAM mp2)
    case IDM_LANGUAGE_FR:
    case IDM_LANGUAGE_IT:
       SetLanguage((int)SHORT1FROMMP(mp1)-IDM_LANGUAGE_EN);
+      DestroyHelpInstance(); InitHelp();
       ApplyLanguage();
       UpdateTitleText(hwnd,0); break;
 

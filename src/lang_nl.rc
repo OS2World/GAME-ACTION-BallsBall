@@ -18,18 +18,20 @@ STRINGTABLE
 {
     10001   "*.bbg"              /* IDS_FILEOPENEXT      */
     10002   "Vangbal"            /* IDS_APPNAME          */
+    10003   "BBHELP_NL.HLP"   /* IDS_HELPLIBRARYNAME */
+    10005   "BallsBall Help"   /* IDS_HELPWINDOWTITLE */
     10004   "Open spel"          /* IDS_OPEN             */
     10006   "Opslaan spel"       /* IDS_SAVE             */
     10007   "Naamloos"           /* IDS_UNTITLED         */
     10008   " - "                /* IDS_TITLEBARSEPARATOR*/
     10009   "Object Klasse"      /* IDS_OBJECTCLASS      */
     10020   "~Spel"              /* IDS_MEN_FILE         */
-    10021   "~Nieuw"             /* IDS_MEN_NEW          */
+    10021   "~Nieuw\tCtrl+N"             /* IDS_MEN_NEW          */
     10022   "~Openen..."         /* IDS_MEN_LOAD         */
     10023   "O~pslaan"           /* IDS_MEN_SAVE         */
     10024   "Op~slaan als..."    /* IDS_MEN_SAVEAS       */
     10025   "~Pauze Spel\tCtrl+P"  /* IDS_MEN_START      */
-    10026   "~Eregalerij"        /* IDS_MEN_HSCORES      */
+    10026   "~Eregalerij\tCtrl+H"        /* IDS_MEN_HSCORES      */
     10027   "~Afsluiten       Esc" /* IDS_MEN_EXIT        */
     10028   "~Instellingen"      /* IDS_MEN_SETTINGS     */
     10029   "~Geluid"            /* IDS_MEN_SOUND        */
@@ -43,7 +45,7 @@ STRINGTABLE
     10037   "En~gels"            /* IDS_MEN_LANG_EN      */
     10038   "~Nederlands"        /* IDS_MEN_LANG_NL      */
     10039   "~Spaans"            /* IDS_MEN_LANG_ES      */
-    10040   "Visuele ~instellingen" /* IDS_MEN_SETTINGS_ALL */
+    10040   "Visuele ~instellingen..." /* IDS_MEN_SETTINGS_ALL */
     10041   "~Help"              /* IDS_MEN_HELP         */
     10042   "~Help"              /* IDS_MEN_HELPGENERAL  */
     10043   "Help-~index"        /* IDS_MEN_HELPINDEX    */
@@ -62,6 +64,7 @@ STRINGTABLE
     10056   "Waarschuwing"      /* IDS_TITLE_WARNING    */
     10057   "~Achtergrond\tCtrl+B"       /* IDS_MEN_BACKGRND     */
     10058   "~Frame besturing\tCtrl+F"   /* IDS_MEN_FRAME        */
+    10059   "Instellingen ~bewaren bij afsluiten" /* IDS_MEN_SAVEONEXIT */
 }
 
 MESSAGETABLE

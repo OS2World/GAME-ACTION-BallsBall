@@ -67,6 +67,7 @@
 #define IDM_LANGUAGE_IT                2506
 #define IDM_BACKGRND                   2600
 #define IDM_FRAME_CTRL                 2700
+#define IDM_SAVEONEXIT                 2800
 
 #define IDM_HELP			               9000
 #define IDM_HELPUSINGHELP		         9100
@@ -128,6 +129,7 @@
 #define IDS_TITLE_WARNING              56
 #define IDS_MEN_BACKGRND               57
 #define IDS_MEN_FRAME                  58
+#define IDS_MEN_SAVEONEXIT             59
 /* Language resource namespaces (single exe, shifted resource ids) */
 #define LANG_BASE_EN                   0
 #define LANG_BASE_NL                   10000

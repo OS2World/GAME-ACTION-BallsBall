@@ -1,10 +1,22 @@
 -------------------------------------------------------------------------------
-BallsBall 1.3 - Source package readme
+BallsBall 1.4 - Source package readme
 -------------------------------------------------------------------------------
 
 This package is a modernized build of the open-source BallsBall /
 Vangbal source.  It is the same game, rebuilt for OS/2 and with six
 languages unified into one executable.
+
+What is new in 1.4
+------------------
+  - Options menu reordered: Sound, Style, Level, Visual Settings...,
+    Language, Background Run, Frame Controls, Save settings on exit.
+  - New "Save settings on exit" option (on by default, kept in bb.ini).
+  - Frame Controls (Ctrl+F) no longer leaves a white strip on top.
+  - New shortcuts: Ctrl+N (New Game) and Ctrl+H (Show High Scores).
+  - Help rewritten: one IPF source per language, built into
+    bin\help\bbhelp_xx.hlp; the help follows the chosen language.
+  - bb.ini and the help files are found next to the executable.
+  - compile.cmd fixed (finds Open Watcom and the OS/2 Toolkit).
 
 What is new in 1.3
 ------------------
@@ -30,15 +42,15 @@ What is new in 1.2
   - The game window now scales to at least 1024x768 when the desktop
     allows it; the cells stay square and the window is never made
     larger than the desktop.
-  - Optional BBHELP.HLP rebuild: `wmake -f makefile.wat help` (needs
-    the IPF compiler, ipfc).
+  - One help file per language (bbhelp_en.hlp ... bbhelp_it.hlp), built from
+    help\bbhelp_xx.ipf with wipfc; the help follows the chosen language.
 
 Build
 -----
 Run `compile.cmd`; Open Watcom is auto-detected from C:\WATCOM or
 D:\WATCOM.  The output is bin\bb.exe plus bb.map.  Run bb.exe from
-bin\ so the game can create/read its bb.ini and BBHELP.HLP next to
-itself.
+bin\ so the game can create/read its bb.ini and the help\bbhelp_xx.hlp
+files next to itself.
 
 History
 -------

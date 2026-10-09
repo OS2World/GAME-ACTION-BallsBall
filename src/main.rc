@@ -21,7 +21,7 @@ MENU IDR_MAIN
 {
     SUBMENU     "~Game", IDM_FILE, MIS_TEXT
     {
-        MENUITEM    "~New Game",        IDM_FILENEW,    MIS_TEXT
+        MENUITEM    "~New Game\tCtrl+N", IDM_FILENEW,    MIS_TEXT
         MENUITEM    "~Load Game",       IDM_FILEOPEN,   MIS_TEXT
         MENUITEM SEPARATOR
         MENUITEM    "~Save Game",       IDM_FILESAVE,   MIS_TEXT
@@ -29,7 +29,7 @@ MENU IDR_MAIN
         MENUITEM SEPARATOR
         MENUITEM    "~Pause Game\tCtrl+P",  IDM_DIRECTION_START,    MIS_TEXT
         MENUITEM SEPARATOR
-        MENUITEM    "Sho~w High Scores",IDM_HIGHSCORES,   MIS_TEXT
+        MENUITEM    "Sho~w High Scores\tCtrl+H",IDM_HIGHSCORES,   MIS_TEXT
         MENUITEM SEPARATOR
         MENUITEM    "E~xit\tF3",       IDM_FILEEXIT,   MIS_TEXT
     }
@@ -58,10 +58,11 @@ MENU IDR_MAIN
            MENUITEM "7",                IDM_LEVEL_7,      MIS_TEXT
            MENUITEM "8",                IDM_LEVEL_8,      MIS_TEXT
            MENUITEM "9",                IDM_LEVEL_9,      MIS_TEXT
-            MENUITEM "10",               IDM_LEVEL_10,     MIS_TEXT
-            MENUITEM "11",               IDM_LEVEL_11,     MIS_TEXT
-            END
-
+           MENUITEM "10",               IDM_LEVEL_10,     MIS_TEXT
+           MENUITEM "11",               IDM_LEVEL_11,     MIS_TEXT
+           END
+        MENUITEM    "Visual Se~ttings...", IDM_SETTINGS_ALL, MIS_TEXT
+        MENUITEM SEPARATOR
         SUBMENU "L~anguage",             IDM_LANGUAGE,     MIS_TEXT
            BEGIN
            MENUITEM "En~glish",          IDM_LANGUAGE_EN,  MIS_TEXT
@@ -71,12 +72,11 @@ MENU IDR_MAIN
            MENUITEM "Fran~cais",         IDM_LANGUAGE_FR,  MIS_TEXT
            MENUITEM "It~aliano",         IDM_LANGUAGE_IT,  MIS_TEXT
            END
-
-        MENUITEM SEPARATOR
-        MENUITEM    "Visual Se~ttings",    IDM_SETTINGS_ALL, MIS_TEXT
         MENUITEM SEPARATOR
         MENUITEM    "~Background Run\tCtrl+B", IDM_BACKGRND,    MIS_TEXT
         MENUITEM    "~Frame Controls\tCtrl+F", IDM_FRAME_CTRL,  MIS_TEXT
+        MENUITEM SEPARATOR
+        MENUITEM    "~Save settings on exit",  IDM_SAVEONEXIT,  MIS_TEXT
     }
 
 /* Application specific menus go here. */
@@ -116,6 +116,10 @@ ACCELTABLE IDR_MAIN
     VK_INSERT,      IDM_FILEEXIT,         VIRTUALKEY,    CONTROL
     VK_INSERT,      IDM_FILEEXIT,         VIRTUALKEY,    SHIFT
     VK_DELETE,      IDM_FILEEXIT,         VIRTUALKEY
+    "n",            IDM_FILENEW,          CONTROL
+    "N",            IDM_FILENEW,          CONTROL
+    "h",            IDM_HIGHSCORES,       CONTROL
+    "H",            IDM_HIGHSCORES,       CONTROL
     "p",            IDM_DIRECTION_START,  CONTROL
     "P",            IDM_DIRECTION_START,  CONTROL
     "b",            IDM_BACKGRND,         CONTROL
@@ -128,7 +132,7 @@ STRINGTABLE
 {
     IDS_APPNAME                 "BallsBall Game"
     IDS_FILEOPENEXT             "*.bbg"
-    IDS_HELPLIBRARYNAME         "BBHELP.HLP"
+    IDS_HELPLIBRARYNAME         "BBHELP_EN.HLP"
     IDS_OPEN                    "Load Game"
     IDS_HELPWINDOWTITLE         "BallsBall Help"
     IDS_SAVE                    "Save Game"
@@ -136,12 +140,12 @@ STRINGTABLE
     IDS_TITLEBARSEPARATOR       " - "
     IDS_OBJECTCLASS             "Object Class"
     IDS_MEN_FILE                "~Game"
-    IDS_MEN_NEW                 "~New Game"
+    IDS_MEN_NEW                 "~New Game\tCtrl+N"
     IDS_MEN_LOAD                "~Load Game"
     IDS_MEN_SAVE                "~Save Game"
     IDS_MEN_SAVEAS              "Save Game ~as..."
     IDS_MEN_START               "~Pause Game\tCtrl+P"
-    IDS_MEN_HSCORES             "Sho~w High Scores"
+    IDS_MEN_HSCORES             "Sho~w High Scores\tCtrl+H"
     IDS_MEN_EXIT                "E~xit\tF3"
     IDS_MEN_SETTINGS            "~Options"
     IDS_MEN_SOUND               "S~ound"
@@ -155,7 +159,7 @@ STRINGTABLE
     IDS_MEN_LANG_EN             "En~glish"
     IDS_MEN_LANG_NL             "N~ederlands"
     IDS_MEN_LANG_ES             "Es~panol"
-    IDS_MEN_SETTINGS_ALL        "Visual Se~ttings"
+    IDS_MEN_SETTINGS_ALL        "Visual Se~ttings..."
     IDS_MEN_HELP                "~Help"
     IDS_MEN_HELPGENERAL         "~General help"
     IDS_MEN_HELPINDEX           "Help ~index"
@@ -174,6 +178,7 @@ STRINGTABLE
     IDS_TITLE_WARNING           "Warning"
     IDS_MEN_BACKGRND            "~Background Run\tCtrl+B"
     IDS_MEN_FRAME               "~Frame Controls\tCtrl+F"
+    IDS_MEN_SAVEONEXIT          "~Save settings on exit"
 }
 
 MESSAGETABLE

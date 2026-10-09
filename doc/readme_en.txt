@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
-BallsBall 1.3 update (modernized build)
+BallsBall 1.4 update (modernized build)
 -------------------------------------------------------------------------------
 This file describes the original BallsBall 1.1 release (2002).  The
-current release is 1.3, a modernized build that
+current release is 1.4, a modernized build that
 
   - builds with Open Watcom (compile.cmd / makefile.wat), no hardcoded paths
   - puts all six languages - English, Dutch, Spanish, German, French, Italian -
@@ -42,14 +42,14 @@ Contents:
 1.License.
 This is a shareware program. The program is provided "as is"
 without warranty of any kind. For more information see
-license.txt or BallsBall Help (License item in bbhelp.hlp).
+license.txt or BallsBall Help (License item in bbhelp_en.hlp).
 
 2. System requirements
 0S/2 Operating System version 3.0 or later, 105 kBites free space on hard disk.
 
 3. List of files in package.
    bb.exe       - BallsBall Game (required)
-   bbhelp.hlp   - BallsBall Help (required)
+   help\bbhelp_xx.hlp - BallsBall Help, one file per language (required)
    readme.txt   - this file (required for automatic installation)
    license.txt  - license information (required for automatic installation)
    install.exe  - installation program (required for automatic installation)
@@ -67,7 +67,7 @@ license.txt or BallsBall Help (License item in bbhelp.hlp).
       Note: files from list is required.
    4.2 Manual installation.
       1. Unpack bball.zip.
-      2. Copy bb.exe and bbhelp.hlp in any directory and start bb.exe 
+      2. Copy bb.exe and the help folder (bbhelp_xx.hlp) in any directory and start bb.exe 
          for beginnings of game.
 
 5. Known problems.

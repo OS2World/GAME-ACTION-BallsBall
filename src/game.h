@@ -24,6 +24,7 @@ extern BOOL bGame;//идет игра
 extern BOOL bNew; //проторяем путь
 extern BOOL bStyle;//2d или 3d
 extern BOOL bSound;//звук
+extern BOOL bSaveOnExit;
 extern BOOL bHalt;//остановка после прибавки
 extern BOOL bChange;//изменились настройки поля
 extern USHORT usLevel;//уровень
