@@ -29,12 +29,12 @@ HELPS = $(BIN)\help\bbhelp_en.hlp $(BIN)\help\bbhelp_nl.hlp $(BIN)\help\bbhelp_e
 
 CFLAGS = -bt=os2 -5r -mf -Oaxt -d0 -zq -w4 -e25 -i=$(SRC)
 
-HEADERS = $(SRC)\game.h $(SRC)\main.h $(SRC)\dlg.h $(SRC)\help.h $(SRC)\xtrn.h
+HEADERS = $(SRC)\game.h $(SRC)\main.h $(SRC)\dlg.h $(SRC)\help.h $(SRC)\xtrn.h $(SRC)\keymap.h $(SRC)\joyos2.h
 
 all : $(BIN)\bb.exe $(HELPS)
 
-$(BIN)\bb.exe : $(BIN)\dlg.obj $(BIN)\file.obj $(BIN)\help.obj $(BIN)\init.obj $(BIN)\main.obj $(BIN)\menu.obj $(BIN)\move.obj $(BIN)\pnt.obj $(BIN)\main.res
-	wlink system os2v2_pm name $(BIN)\bb op q op map op maxe=25 op stack=65536 op heap=4096 file $(BIN)\dlg.obj, $(BIN)\file.obj, $(BIN)\help.obj, $(BIN)\init.obj, $(BIN)\main.obj, $(BIN)\menu.obj, $(BIN)\move.obj, $(BIN)\pnt.obj
+$(BIN)\bb.exe : $(BIN)\dlg.obj $(BIN)\file.obj $(BIN)\help.obj $(BIN)\init.obj $(BIN)\keymap.obj $(BIN)\main.obj $(BIN)\menu.obj $(BIN)\move.obj $(BIN)\pnt.obj $(BIN)\main.res
+	wlink system os2v2_pm name $(BIN)\bb op q op map op maxe=25 op stack=65536 op heap=4096 file $(BIN)\dlg.obj, $(BIN)\file.obj, $(BIN)\help.obj, $(BIN)\init.obj, $(BIN)\keymap.obj, $(BIN)\main.obj, $(BIN)\menu.obj, $(BIN)\move.obj, $(BIN)\pnt.obj
 	wrc -q $(BIN)\main.res $(BIN)\bb.exe
 
 $(BIN)\dlg.obj : $(SRC)\dlg.c $(HEADERS)
@@ -49,6 +49,9 @@ $(BIN)\help.obj : $(SRC)\help.c $(HEADERS)
 $(BIN)\init.obj : $(SRC)\init.c $(HEADERS)
 	wcc386 $(CFLAGS) -fo=$(BIN)\init.obj $(SRC)\init.c
 
+$(BIN)\keymap.obj : $(SRC)\keymap.c $(HEADERS)
+	wcc386 $(CFLAGS) -fo=$(BIN)\keymap.obj $(SRC)\keymap.c
+
 $(BIN)\main.obj : $(SRC)\main.c $(HEADERS)
 	wcc386 $(CFLAGS) -fo=$(BIN)\main.obj $(SRC)\main.c
 
@@ -61,7 +64,7 @@ $(BIN)\move.obj : $(SRC)\move.c $(HEADERS)
 $(BIN)\pnt.obj : $(SRC)\pnt.c $(HEADERS)
 	wcc386 $(CFLAGS) -fo=$(BIN)\pnt.obj $(SRC)\pnt.c
 
-$(BIN)\main.res : $(SRC)\main.rc $(SRC)\main.h $(SRC)\dlg.h $(SRC)\dialogs.dlg $(SRC)\dialogs.nl.dlg $(SRC)\dialogs.es.dlg $(SRC)\dialogs.de.dlg $(SRC)\dialogs.fr.dlg $(SRC)\dialogs.it.dlg $(SRC)\lang_nl.rc $(SRC)\lang_es.rc $(SRC)\lang_de.rc $(SRC)\lang_fr.rc $(SRC)\lang_it.rc $(SRC)\help.rc $(SRC)\bbicon.ico
+$(BIN)\main.res : $(SRC)\main.rc $(SRC)\main.h $(SRC)\dlg.h $(SRC)\dialogs.dlg $(SRC)\keymap.dlg $(SRC)\dialogs.nl.dlg $(SRC)\dialogs.es.dlg $(SRC)\dialogs.de.dlg $(SRC)\dialogs.fr.dlg $(SRC)\dialogs.it.dlg $(SRC)\lang_nl.rc $(SRC)\lang_es.rc $(SRC)\lang_de.rc $(SRC)\lang_fr.rc $(SRC)\lang_it.rc $(SRC)\help.rc $(SRC)\bbicon.ico
 	wrc -r -i=$(SRC) -i=help -fo=$(BIN)\main.res $(SRC)\main.rc
 
 help : $(HELPS) .SYMBOLIC

@@ -33,14 +33,14 @@ STRINGTABLE
     40024   "Enregistrer ~sous..." /* IDS_MEN_SAVEAS     */
     40025   "~Pause Jeu\tCtrl+P"       /* IDS_MEN_START */
     40026   "Rec~ords\tCtrl+H"           /* IDS_MEN_HSCORES      */
-    40027   "~Quitter          Esc" /* IDS_MEN_EXIT      */
+    40027   "~Quitter\tCtrl+X" /* IDS_MEN_EXIT      */
     40028   "~Options"           /* IDS_MEN_SETTINGS     */
     40029   "~Son"               /* IDS_MEN_SOUND        */
     40030   "~Marche"            /* IDS_MEN_SOUNDON      */
     40031   "A~rret"             /* IDS_MEN_SOUNDOFF     */
-    40032   "~Style"             /* IDS_MEN_STYLE        */
-    40033   "~2D    F2"          /* IDS_MEN_STYLE2D      */
-    40034   "~3D    F3"          /* IDS_MEN_STYLE3D      */
+    40032   "~Style\tCtrl+S"             /* IDS_MEN_STYLE        */
+    40033   "~2D"          /* IDS_MEN_STYLE2D      */
+    40034   "~3D"          /* IDS_MEN_STYLE3D      */
     40035   "~Niveau"            /* IDS_MEN_LEVEL        */
     40036   "~Langue"            /* IDS_MEN_LANGUAGE     */
     40037   "En~glish"           /* IDS_MEN_LANG_EN      */
@@ -66,6 +66,35 @@ STRINGTABLE
     40057   "~Arriere-plan Actif\tCtrl+B" /* IDS_MEN_BACKGRND   */
     40058   "~Cadre\tCtrl+F"             /* IDS_MEN_FRAME        */
     40059   "~Enregistrer les parametres en quittant" /* IDS_MEN_SAVEONEXIT */
+    40060   "~Affectation des touches..."   /* IDS_MEN_KEYMAPPING */
+    40061   "Affectation des touches"   /* IDS_KM_TITLE */
+    40062   "Clavier"   /* IDS_KM_TAB_KBD */
+    40063   "Joystick"   /* IDS_KM_TAB_JOY */
+    40064   "Aller a gauche"   /* IDS_KM_A_LEFT */
+    40065   "Aller a droite"   /* IDS_KM_A_RIGHT */
+    40066   "Aller en haut"   /* IDS_KM_A_UP */
+    40067   "Aller en bas"   /* IDS_KM_A_DOWN */
+    40068   "Demarrer / Pause"   /* IDS_KM_A_START */
+    40069   "Arreter le coureur"   /* IDS_KM_A_STOP */
+    40070   "Cliquez sur une case puis appuyez sur la touche"   /* IDS_KM_KBD_H1 */
+    40071   "de l'action. Entree demarre / met en pause toujours."   /* IDS_KM_KBD_H2 */
+    40072   "Cliquez sur une case puis appuyez sur un bouton"   /* IDS_KM_JOY_H1 */
+    40073   "du joystick ou bougez le manche (Suppr efface)."   /* IDS_KM_JOY_H2 */
+    40074   "~Activer le joystick"   /* IDS_KM_JOY_EN */
+    40075   "Joystick ~A"   /* IDS_KM_JOY_A */
+    40076   "Joystick ~B"   /* IDS_KM_JOY_B */
+    40077   "Calibrer A"   /* IDS_KM_CAL_A */
+    40078   "Calibrer B"   /* IDS_KM_CAL_B */
+    40079   "OK"   /* IDS_KM_OK */
+    40080   "Annuler"   /* IDS_KM_CANCEL */
+    40081   "Centrez le joystick %c puis cliquez sur OK."   /* IDS_KM_CAL_MSG */
+    40082   "Calibrer le joystick %c"   /* IDS_KM_CAL_TITLE */
+    40083   "Aucun"   /* IDS_KM_NONE */
+    40084   "Axe gauche"   /* IDS_KM_AXL */
+    40085   "Axe droite"   /* IDS_KM_AXR */
+    40086   "Axe haut"   /* IDS_KM_AXU */
+    40087   "Axe bas"   /* IDS_KM_AXD */
+    40088   "Bouton %d"   /* IDS_KM_BTN */
 }
 
 MESSAGETABLE

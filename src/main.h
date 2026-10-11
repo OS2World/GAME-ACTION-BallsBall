@@ -43,6 +43,7 @@
 #define IDM_SOUND_OFF                  2102
 #define IDM_STYLE  			            2200
 #define IDM_STYLE_2D			            2201
+#define IDM_STYLE_TOGGLE               2203
 #define IDM_STYLE_3D			            2202
 #define IDM_LEVEL   			            2300
 #define IDM_LEVEL_0                    2301
@@ -68,6 +69,7 @@
 #define IDM_BACKGRND                   2600
 #define IDM_FRAME_CTRL                 2700
 #define IDM_SAVEONEXIT                 2800
+#define IDM_KEYMAPPING                 2900
 
 #define IDM_HELP			               9000
 #define IDM_HELPUSINGHELP		         9100
@@ -130,6 +132,36 @@
 #define IDS_MEN_BACKGRND               57
 #define IDS_MEN_FRAME                  58
 #define IDS_MEN_SAVEONEXIT             59
+/* Key Mapping menu text and dialog texts */
+#define IDS_MEN_KEYMAPPING              60
+#define IDS_KM_TITLE                    61
+#define IDS_KM_TAB_KBD                  62
+#define IDS_KM_TAB_JOY                  63
+#define IDS_KM_A_LEFT                   64
+#define IDS_KM_A_RIGHT                  65
+#define IDS_KM_A_UP                     66
+#define IDS_KM_A_DOWN                   67
+#define IDS_KM_A_START                  68
+#define IDS_KM_A_STOP                   69
+#define IDS_KM_KBD_H1                   70
+#define IDS_KM_KBD_H2                   71
+#define IDS_KM_JOY_H1                   72
+#define IDS_KM_JOY_H2                   73
+#define IDS_KM_JOY_EN                   74
+#define IDS_KM_JOY_A                    75
+#define IDS_KM_JOY_B                    76
+#define IDS_KM_CAL_A                    77
+#define IDS_KM_CAL_B                    78
+#define IDS_KM_OK                       79
+#define IDS_KM_CANCEL                   80
+#define IDS_KM_CAL_MSG                  81
+#define IDS_KM_CAL_TITLE                82
+#define IDS_KM_NONE                     83
+#define IDS_KM_AXL                      84
+#define IDS_KM_AXR                      85
+#define IDS_KM_AXU                      86
+#define IDS_KM_AXD                      87
+#define IDS_KM_BTN                      88
 /* Language resource namespaces (single exe, shifted resource ids) */
 #define LANG_BASE_EN                   0
 #define LANG_BASE_NL                   10000

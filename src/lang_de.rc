@@ -33,14 +33,14 @@ STRINGTABLE
     30024   "Speichern un~ter..." /* IDS_MEN_SAVEAS      */
     30025   "~Pause Spiel\tCtrl+P" /* IDS_MEN_START      */
     30026   "Rek~orde\tCtrl+H"           /* IDS_MEN_HSCORES      */
-    30027   "B~eenden         Esc" /* IDS_MEN_EXIT       */
+    30027   "B~eenden\tCtrl+X" /* IDS_MEN_EXIT       */
     30028   "~Einstellungen"     /* IDS_MEN_SETTINGS     */
     30029   "~Ton"               /* IDS_MEN_SOUND        */
     30030   "~Ein"               /* IDS_MEN_SOUNDON      */
     30031   "~Aus"               /* IDS_MEN_SOUNDOFF     */
-    30032   "~Ansicht"           /* IDS_MEN_STYLE        */
-    30033   "~2D    F2"          /* IDS_MEN_STYLE2D      */
-    30034   "~3D    F3"          /* IDS_MEN_STYLE3D      */
+    30032   "~Ansicht\tCtrl+S"           /* IDS_MEN_STYLE        */
+    30033   "~2D"          /* IDS_MEN_STYLE2D      */
+    30034   "~3D"          /* IDS_MEN_STYLE3D      */
     30035   "~Stufe"             /* IDS_MEN_LEVEL        */
     30036   "~Sprache"           /* IDS_MEN_LANGUAGE     */
     30037   "En~glish"           /* IDS_MEN_LANG_EN      */
@@ -66,6 +66,35 @@ STRINGTABLE
     30057   "~Hintergrundlauf\tCtrl+B"   /* IDS_MEN_BACKGRND     */
     30058   "~Rahmensteuerung\tCtrl+F"   /* IDS_MEN_FRAME        */
     30059   "Einstellungen beim Beenden ~speichern" /* IDS_MEN_SAVEONEXIT */
+    30060   "T~astenzuordnung..."   /* IDS_MEN_KEYMAPPING */
+    30061   "Tastenzuordnung"   /* IDS_KM_TITLE */
+    30062   "Tastatur"   /* IDS_KM_TAB_KBD */
+    30063   "Joystick"   /* IDS_KM_TAB_JOY */
+    30064   "Nach links"   /* IDS_KM_A_LEFT */
+    30065   "Nach rechts"   /* IDS_KM_A_RIGHT */
+    30066   "Nach oben"   /* IDS_KM_A_UP */
+    30067   "Nach unten"   /* IDS_KM_A_DOWN */
+    30068   "Start / Pause"   /* IDS_KM_A_START */
+    30069   "Laeufer anhalten"   /* IDS_KM_A_STOP */
+    30070   "Klicke auf ein Feld und druecke die Taste"   /* IDS_KM_KBD_H1 */
+    30071   "fuer die Aktion. Eingabe startet / pausiert immer."   /* IDS_KM_KBD_H2 */
+    30072   "Klicke auf ein Feld und druecke eine Joystick-Taste"   /* IDS_KM_JOY_H1 */
+    30073   "oder bewege den Stick (Entf loescht)."   /* IDS_KM_JOY_H2 */
+    30074   "Joystick ~aktivieren"   /* IDS_KM_JOY_EN */
+    30075   "Joystick ~A"   /* IDS_KM_JOY_A */
+    30076   "Joystick ~B"   /* IDS_KM_JOY_B */
+    30077   "A kalibrieren"   /* IDS_KM_CAL_A */
+    30078   "B kalibrieren"   /* IDS_KM_CAL_B */
+    30079   "OK"   /* IDS_KM_OK */
+    30080   "Abbrechen"   /* IDS_KM_CANCEL */
+    30081   "Joystick %c zentrieren, dann OK klicken."   /* IDS_KM_CAL_MSG */
+    30082   "Joystick %c kalibrieren"   /* IDS_KM_CAL_TITLE */
+    30083   "Keine"   /* IDS_KM_NONE */
+    30084   "Achse links"   /* IDS_KM_AXL */
+    30085   "Achse rechts"   /* IDS_KM_AXR */
+    30086   "Achse oben"   /* IDS_KM_AXU */
+    30087   "Achse unten"   /* IDS_KM_AXD */
+    30088   "Taste %d"   /* IDS_KM_BTN */
 }
 
 MESSAGETABLE

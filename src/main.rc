@@ -31,7 +31,7 @@ MENU IDR_MAIN
         MENUITEM SEPARATOR
         MENUITEM    "Sho~w High Scores\tCtrl+H",IDM_HIGHSCORES,   MIS_TEXT
         MENUITEM SEPARATOR
-        MENUITEM    "E~xit\tF3",       IDM_FILEEXIT,   MIS_TEXT
+        MENUITEM    "E~xit\tCtrl+X",       IDM_FILEEXIT,   MIS_TEXT
     }
 
     SUBMENU     "~Options",             IDM_SETTINGS,     MIS_TEXT
@@ -41,9 +41,9 @@ MENU IDR_MAIN
            MENUITEM "O~n",              IDM_SOUND_ON,     MIS_TEXT
            MENUITEM "O~ff",             IDM_SOUND_OFF,    MIS_TEXT
            END
-        SUBMENU "St~yle",               IDM_STYLE,        MIS_TEXT
+        SUBMENU "St~yle\tCtrl+S",        IDM_STYLE,        MIS_TEXT
            BEGIN
-           MENUITEM "~2D    F2",        IDM_STYLE_2D,     MIS_TEXT
+           MENUITEM "~2D",              IDM_STYLE_2D,     MIS_TEXT
            MENUITEM "~3D",              IDM_STYLE_3D,     MIS_TEXT
            END
         SUBMENU "Le~vel",               IDM_LEVEL,        MIS_TEXT
@@ -62,6 +62,7 @@ MENU IDR_MAIN
            MENUITEM "11",               IDM_LEVEL_11,     MIS_TEXT
            END
         MENUITEM    "Visual Se~ttings...", IDM_SETTINGS_ALL, MIS_TEXT
+        MENUITEM    "~Key Mapping...",     IDM_KEYMAPPING,   MIS_TEXT
         MENUITEM SEPARATOR
         SUBMENU "L~anguage",             IDM_LANGUAGE,     MIS_TEXT
            BEGIN
@@ -103,7 +104,7 @@ MENU POPUP_MENU
    MENUITEM "Sound O~n",           IDM_SOUND_ON,   MIS_TEXT
    MENUITEM "Sound O~ff",          IDM_SOUND_OFF,  MIS_TEXT
    MENUITEM SEPARATOR
-   MENUITEM    "E~xit\tF3",   IDM_FILEEXIT,   MIS_TEXT
+   MENUITEM    "E~xit\tCtrl+X",   IDM_FILEEXIT,   MIS_TEXT
 }
 
 ACCELTABLE IDR_MAIN
@@ -116,6 +117,8 @@ ACCELTABLE IDR_MAIN
     VK_INSERT,      IDM_FILEEXIT,         VIRTUALKEY,    CONTROL
     VK_INSERT,      IDM_FILEEXIT,         VIRTUALKEY,    SHIFT
     VK_DELETE,      IDM_FILEEXIT,         VIRTUALKEY
+    "s",            IDM_STYLE_TOGGLE,     CONTROL
+    "S",            IDM_STYLE_TOGGLE,     CONTROL
     "n",            IDM_FILENEW,          CONTROL
     "N",            IDM_FILENEW,          CONTROL
     "h",            IDM_HIGHSCORES,       CONTROL
@@ -146,13 +149,13 @@ STRINGTABLE
     IDS_MEN_SAVEAS              "Save Game ~as..."
     IDS_MEN_START               "~Pause Game\tCtrl+P"
     IDS_MEN_HSCORES             "Sho~w High Scores\tCtrl+H"
-    IDS_MEN_EXIT                "E~xit\tF3"
+    IDS_MEN_EXIT                "E~xit\tCtrl+X"
     IDS_MEN_SETTINGS            "~Options"
     IDS_MEN_SOUND               "S~ound"
     IDS_MEN_SOUNDON             "O~n"
     IDS_MEN_SOUNDOFF            "O~ff"
-    IDS_MEN_STYLE               "St~yle"
-    IDS_MEN_STYLE2D             "~2D    F2"
+    IDS_MEN_STYLE               "St~yle\tCtrl+S"
+    IDS_MEN_STYLE2D             "~2D"
     IDS_MEN_STYLE3D             "~3D"
     IDS_MEN_LEVEL               "Le~vel"
     IDS_MEN_LANGUAGE            "L~anguage"
@@ -179,6 +182,35 @@ STRINGTABLE
     IDS_MEN_BACKGRND            "~Background Run\tCtrl+B"
     IDS_MEN_FRAME               "~Frame Controls\tCtrl+F"
     IDS_MEN_SAVEONEXIT          "~Save settings on exit"
+    IDS_MEN_KEYMAPPING             "~Key Mapping..."
+    IDS_KM_TITLE                   "Key Mapping"
+    IDS_KM_TAB_KBD                 "Keyboard"
+    IDS_KM_TAB_JOY                 "Joystick"
+    IDS_KM_A_LEFT                  "Move Left"
+    IDS_KM_A_RIGHT                 "Move Right"
+    IDS_KM_A_UP                    "Move Up"
+    IDS_KM_A_DOWN                  "Move Down"
+    IDS_KM_A_START                 "Start / Pause"
+    IDS_KM_A_STOP                  "Stop runner"
+    IDS_KM_KBD_H1                  "Click a box, then press the key"
+    IDS_KM_KBD_H2                  "for the action. Enter always starts / pauses."
+    IDS_KM_JOY_H1                  "Click a box, then press a joystick button"
+    IDS_KM_JOY_H2                  "or move the stick (Delete clears)."
+    IDS_KM_JOY_EN                  "~Enable Joystick"
+    IDS_KM_JOY_A                   "Joystick ~A"
+    IDS_KM_JOY_B                   "Joystick ~B"
+    IDS_KM_CAL_A                   "Calibrate A"
+    IDS_KM_CAL_B                   "Calibrate B"
+    IDS_KM_OK                      "Ok"
+    IDS_KM_CANCEL                  "Cancel"
+    IDS_KM_CAL_MSG                 "Center Joystick %c, then click OK."
+    IDS_KM_CAL_TITLE               "Calibrate Joystick %c"
+    IDS_KM_NONE                    "None"
+    IDS_KM_AXL                     "Axis L"
+    IDS_KM_AXR                     "Axis R"
+    IDS_KM_AXU                     "Axis Up"
+    IDS_KM_AXD                     "Axis Down"
+    IDS_KM_BTN                     "Btn %d"
 }
 
 MESSAGETABLE
@@ -212,6 +244,7 @@ MESSAGETABLE
 }
 /* include dialog templates created by dialog editor */
 rcinclude dialogs.dlg
+rcinclude keymap.dlg
 rcinclude dialogs.nl.dlg
 rcinclude dialogs.es.dlg
 rcinclude dialogs.de.dlg

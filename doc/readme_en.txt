@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
-BallsBall 1.4 update (modernized build)
+BallsBall 1.5 update (modernized build)
 -------------------------------------------------------------------------------
 This file describes the original BallsBall 1.1 release (2002).  The
-current release is 1.4, a modernized build that
+current release is 1.5, a modernized build that
 
   - builds with Open Watcom (compile.cmd / makefile.wat), no hardcoded paths
   - puts all six languages - English, Dutch, Spanish, German, French, Italian -

@@ -33,13 +33,13 @@ STRINGTABLE
     50024   "Salva ~come..."     /* IDS_MEN_SAVEAS       */
     50025   "~Pausa Gioco\tCtrl+P"  /* IDS_MEN_START     */
     50026   "~Record\tCtrl+H"            /* IDS_MEN_HSCORES      */
-    50027   "~Esci            Esc" /* IDS_MEN_EXIT       */
+    50027   "~Esci\tCtrl+X" /* IDS_MEN_EXIT       */
     50028   "~Opzioni"           /* IDS_MEN_SETTINGS     */
     50029   "~Suono"             /* IDS_MEN_SOUND        */
     50030   "~Attivato"          /* IDS_MEN_SOUNDON      */
     50031   "~Disattivato"       /* IDS_MEN_SOUNDOFF     */
-    50032   "~Stile"             /* IDS_MEN_STYLE        */
-    50033   "~2D    F2"          /* IDS_MEN_STYLE2D      */
+    50032   "~Stile\tCtrl+S"             /* IDS_MEN_STYLE        */
+    50033   "~2D"          /* IDS_MEN_STYLE2D      */
     50034   "~3D"                /* IDS_MEN_STYLE3D      */
     50035   "~Livello"           /* IDS_MEN_LEVEL        */
     50036   "~Lingua"            /* IDS_MEN_LANGUAGE     */
@@ -66,6 +66,35 @@ STRINGTABLE
     50057   "~Sfondo Attivo\tCtrl+B"     /* IDS_MEN_BACKGRND     */
     50058   "~Controlli Cornice\tCtrl+F" /* IDS_MEN_FRAME        */
     50059   "~Salva impostazioni all'uscita" /* IDS_MEN_SAVEONEXIT */
+    50060   "~Assegnazione tasti..."   /* IDS_MEN_KEYMAPPING */
+    50061   "Assegnazione tasti"   /* IDS_KM_TITLE */
+    50062   "Tastiera"   /* IDS_KM_TAB_KBD */
+    50063   "Joystick"   /* IDS_KM_TAB_JOY */
+    50064   "Vai a sinistra"   /* IDS_KM_A_LEFT */
+    50065   "Vai a destra"   /* IDS_KM_A_RIGHT */
+    50066   "Vai su"   /* IDS_KM_A_UP */
+    50067   "Vai giu"   /* IDS_KM_A_DOWN */
+    50068   "Avvia / Pausa"   /* IDS_KM_A_START */
+    50069   "Ferma il corridore"   /* IDS_KM_A_STOP */
+    50070   "Fai clic su una casella e premi il tasto"   /* IDS_KM_KBD_H1 */
+    50071   "dell'azione. Invio avvia / mette sempre in pausa."   /* IDS_KM_KBD_H2 */
+    50072   "Fai clic su una casella e premi un pulsante"   /* IDS_KM_JOY_H1 */
+    50073   "del joystick o muovi la leva (Canc cancella)."   /* IDS_KM_JOY_H2 */
+    50074   "~Attiva joystick"   /* IDS_KM_JOY_EN */
+    50075   "Joystick ~A"   /* IDS_KM_JOY_A */
+    50076   "Joystick ~B"   /* IDS_KM_JOY_B */
+    50077   "Calibra A"   /* IDS_KM_CAL_A */
+    50078   "Calibra B"   /* IDS_KM_CAL_B */
+    50079   "OK"   /* IDS_KM_OK */
+    50080   "Annulla"   /* IDS_KM_CANCEL */
+    50081   "Centra il joystick %c e fai clic su OK."   /* IDS_KM_CAL_MSG */
+    50082   "Calibra joystick %c"   /* IDS_KM_CAL_TITLE */
+    50083   "Nessuno"   /* IDS_KM_NONE */
+    50084   "Asse sinistra"   /* IDS_KM_AXL */
+    50085   "Asse destra"   /* IDS_KM_AXR */
+    50086   "Asse su"   /* IDS_KM_AXU */
+    50087   "Asse giu"   /* IDS_KM_AXD */
+    50088   "Pulsante %d"   /* IDS_KM_BTN */
 }
 
 MESSAGETABLE

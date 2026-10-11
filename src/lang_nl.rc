@@ -32,14 +32,14 @@ STRINGTABLE
     10024   "Op~slaan als..."    /* IDS_MEN_SAVEAS       */
     10025   "~Pauze Spel\tCtrl+P"  /* IDS_MEN_START      */
     10026   "~Eregalerij\tCtrl+H"        /* IDS_MEN_HSCORES      */
-    10027   "~Afsluiten       Esc" /* IDS_MEN_EXIT        */
+    10027   "~Afsluiten\tCtrl+X" /* IDS_MEN_EXIT        */
     10028   "~Instellingen"      /* IDS_MEN_SETTINGS     */
     10029   "~Geluid"            /* IDS_MEN_SOUND        */
     10030   "~Aan"               /* IDS_MEN_SOUNDON      */
     10031   "~Uit"               /* IDS_MEN_SOUNDOFF     */
-    10032   "~Weergave"          /* IDS_MEN_STYLE        */
-    10033   "~2D    F2"          /* IDS_MEN_STYLE2D      */
-    10034   "~3D    F3"          /* IDS_MEN_STYLE3D      */
+    10032   "~Weergave\tCtrl+S"          /* IDS_MEN_STYLE        */
+    10033   "~2D"          /* IDS_MEN_STYLE2D      */
+    10034   "~3D"          /* IDS_MEN_STYLE3D      */
     10035   "~Niveau"            /* IDS_MEN_LEVEL        */
     10036   "Ta~al"              /* IDS_MEN_LANGUAGE     */
     10037   "En~gels"            /* IDS_MEN_LANG_EN      */
@@ -65,6 +65,35 @@ STRINGTABLE
     10057   "~Achtergrond\tCtrl+B"       /* IDS_MEN_BACKGRND     */
     10058   "~Frame besturing\tCtrl+F"   /* IDS_MEN_FRAME        */
     10059   "Instellingen ~bewaren bij afsluiten" /* IDS_MEN_SAVEONEXIT */
+    10060   "To~etsen toewijzen..."   /* IDS_MEN_KEYMAPPING */
+    10061   "Toetsen toewijzen"   /* IDS_KM_TITLE */
+    10062   "Toetsenbord"   /* IDS_KM_TAB_KBD */
+    10063   "Joystick"   /* IDS_KM_TAB_JOY */
+    10064   "Naar links"   /* IDS_KM_A_LEFT */
+    10065   "Naar rechts"   /* IDS_KM_A_RIGHT */
+    10066   "Omhoog"   /* IDS_KM_A_UP */
+    10067   "Omlaag"   /* IDS_KM_A_DOWN */
+    10068   "Start / Pauze"   /* IDS_KM_A_START */
+    10069   "Loper stoppen"   /* IDS_KM_A_STOP */
+    10070   "Klik op een vak en druk op de toets"   /* IDS_KM_KBD_H1 */
+    10071   "voor de actie. Enter start / pauzeert altijd."   /* IDS_KM_KBD_H2 */
+    10072   "Klik op een vak en druk op een joystickknop"   /* IDS_KM_JOY_H1 */
+    10073   "of beweeg de stick (Delete wist)."   /* IDS_KM_JOY_H2 */
+    10074   "Joystick ~gebruiken"   /* IDS_KM_JOY_EN */
+    10075   "Joystick ~A"   /* IDS_KM_JOY_A */
+    10076   "Joystick ~B"   /* IDS_KM_JOY_B */
+    10077   "Kalibreer A"   /* IDS_KM_CAL_A */
+    10078   "Kalibreer B"   /* IDS_KM_CAL_B */
+    10079   "OK"   /* IDS_KM_OK */
+    10080   "Annuleren"   /* IDS_KM_CANCEL */
+    10081   "Centreer joystick %c en klik op OK."   /* IDS_KM_CAL_MSG */
+    10082   "Joystick %c kalibreren"   /* IDS_KM_CAL_TITLE */
+    10083   "Geen"   /* IDS_KM_NONE */
+    10084   "As links"   /* IDS_KM_AXL */
+    10085   "As rechts"   /* IDS_KM_AXR */
+    10086   "As omhoog"   /* IDS_KM_AXU */
+    10087   "As omlaag"   /* IDS_KM_AXD */
+    10088   "Knop %d"   /* IDS_KM_BTN */
 }
 
 MESSAGETABLE

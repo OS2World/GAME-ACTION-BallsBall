@@ -70,4 +70,22 @@
 #define CB_SOUND      435
 #define CB_HALT       436
 #define PB_DEFAULT    437
+/* Key Mapping dialog (keymap.dlg) */
+#define DLG_KEYMAPPING   500
+#define DLG_KM_KEYBOARD  501
+#define DLG_KM_JOYSTICK  502
+#define IDC_KM_NOTEBOOK  510
+#define IDC_KM_KBD1      520  /* keyboard boxes 520..524 */
+#define IDC_KM_KL1       530  /* keyboard labels 530..534 */
+#define IDC_KM_JBTN1     540  /* joystick boxes 540..545 */
+#define IDC_KM_JL1       550  /* joystick labels 550..555 */
+#define IDC_KM_JOY_EN    560
+#define IDC_KM_JOY_A     561
+#define IDC_KM_JOY_B     562
+#define IDC_KM_CAL       563
+#define IDC_KM_CALB      564
+#define IDC_KM_KH1       565
+#define IDC_KM_KH2       566
+#define IDC_KM_JH1       567
+#define IDC_KM_JH2       568
 /***************************  End of dlg.h  ****************************/

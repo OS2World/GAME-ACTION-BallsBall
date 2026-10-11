@@ -4,6 +4,26 @@ BallsBall is a really simple and addictive game for OS/2. The game objective is 
 
 ![BallsBall ScreenShot](/doc/BallsBall.png)
 
+VERSION 1.5
+===========
+BallsBall 1.5 adds Key Mapping and joystick support:
+
+- New Options - Key Mapping... window (Keyboard and Joystick tabs), translated
+  in all six languages.
+- Keyboard: map the four directions and Start / Pause to any key (click a
+  box and press the key). Enter always starts / pauses; any other character key
+  still stops the runner. The default keys are the ones used before.
+- Joystick (GAME$ driver): Enable Joystick, Joystick A / B and Calibrate A /
+  Calibrate B; every action (the four directions, Start / Pause and Stop
+  runner) can be a joystick button or a stick direction. What is held when
+  the game starts is only taken as the starting state, and a change has to be
+  seen twice, so a stick that does not rest in the centre cannot start or
+  pause the game by itself.
+- The mappings are saved in bb.ini (section Keys).
+- The white strip on the left of the Key Mapping pages is gone.
+- BLDLEVEL and About box show version 1.5.
+
+
 VERSION 1.4
 ===========
 BallsBall 1.4 reorganizes the menus and the help:

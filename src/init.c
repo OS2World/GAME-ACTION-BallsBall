@@ -53,6 +53,7 @@
 #include "dlg.h"
 #include "game.h"
 #include "xtrn.h"
+#include "keymap.h"
 
 /* Global variables */
 long *(*Field);  //�� ����
@@ -341,6 +342,7 @@ BOOL InitPrf()
       bSound = PrfQueryProfileInt(hini,"Settings","Sound",1);//��� ����祭
       bSaveOnExit = PrfQueryProfileInt(hini,"Settings","SaveOnExit",1) ? TRUE : FALSE;
       bHalt  = PrfQueryProfileInt(hini,"Settings","Halt",1);//��⠭����������
+      KmLoad(hini);
       iHScore = PrfQueryProfileInt(hini,"High Scores","10",0);/*������ � ����⪥*/
       PrfCloseProfile(hini);
       if( CLR_FIELD   != CLR_CHANNEL && CLR_FIELD   != CLR_NEW   &&
@@ -585,6 +587,7 @@ VOID ClosePrf()
       PrfWriteProfileString(hini,"Settings","Halt",szMsg);
       sprintf(szMsg,"%d",iLang);
       PrfWriteProfileString(hini,"Settings","Language",szMsg);
+      KmSave(hini);
       //����뢠�� .ini 䠩�
       PrfCloseProfile(hini);}
    else {CHAR szW[40];

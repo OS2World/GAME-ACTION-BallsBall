@@ -45,9 +45,10 @@
 #include "help.h"
 #include "dlg.h"
 #include "xtrn.h"
+#include "keymap.h"
 
 
-static const char bldlevel[] = "@#BALLSBALL:1.4#@ BallsBall for OS/2 Presentation Manager";
+static const char bldlevel[] = "@#BALLSBALL:1.5#@ BallsBall for OS/2 Presentation Manager";
 #pragma ref(bldlevel)
 
 /* Global variables */
@@ -151,6 +152,7 @@ int main(VOID)
    /* �� ���� ���樠������ ����஥� � ���� */
    InitNewGame(0);//����� ���
    InitHelp();
+   KmInit();
    if(!bInit)//�᫨ ���樠������ ��諠 ���਩��
       MessageBox(hwndMain, IDMSG_CANNOTLOADSETTINGS,
          LangText(IDS_TITLE_WARNING, 40, szLangT), MB_OK | MB_ERROR, TRUE);
@@ -158,6 +160,7 @@ int main(VOID)
    while(WinGetMsg(hab, (PQMSG)&qmsg, (HWND)NULL, (ULONG)NULL, (ULONG)NULL))
        WinDispatchMsg(hab, (PQMSG)&qmsg);
    /* destroy the help instance */
+   KmDone();
    DestroyHelpInstance(); ExitProc();
    return(RETURN_SUCCESS);
 }   /* End of main   */
@@ -493,6 +496,9 @@ VOID MainCommand(HWND hwnd, MPARAM mp1, MPARAM mp2)
    case IDM_STYLE_2D:
       bStyle = 0;WinInvalidateRect(hwnd,NULL,FALSE);break;
 
+   case IDM_STYLE_TOGGLE:
+      bStyle = !bStyle;WinInvalidateRect(hwnd,NULL,FALSE);break;
+
    case IDM_STYLE_3D:
       bStyle = 1;WinInvalidateRect(hwnd,NULL,FALSE);break;
 
@@ -553,6 +559,15 @@ VOID MainCommand(HWND hwnd, MPARAM mp1, MPARAM mp2)
             WinStartTimer(hab,hwnd,IDT_MOVE,100);
             WinStartTimer(hab,hwnd,IDT_GAME,1000);} break;
 
+   case IDM_KEYMAPPING:
+      if(bGame){
+         WinStopTimer(hab,hwnd,IDT_MOVE);
+         WinStopTimer(hab,hwnd,IDT_GAME);}
+      KmDialog(hwnd);
+      if(bGame){
+            WinStartTimer(hab,hwnd,IDT_MOVE,100);
+            WinStartTimer(hab,hwnd,IDT_GAME,1000);} break;
+
    case IDM_LANGUAGE_EN:
    case IDM_LANGUAGE_NL:
    case IDM_LANGUAGE_ES:
@@ -586,6 +601,29 @@ VOID MainCommand(HWND hwnd, MPARAM mp1, MPARAM mp2)
    }
 }   /* End of MainCommand  */
 /**************************************************************************
+ *  Name       : RunnerAction(INT act)
+ *
+ *  Description: One action of the game (from a key or the joystick):
+ *               direction of the runner, start / pause, stop.
+ *************************************************************************/
+VOID RunnerAction(INT act)
+{
+   switch(act){
+      case ACT_LEFT:
+         if(bGame){Runner.xRight = -1; Runner.yTop = 0;}break;
+      case ACT_RIGHT:
+         if(bGame){Runner.xRight =  1; Runner.yTop = 0;}break;
+      case ACT_UP:
+         if(bGame){Runner.xRight =  0; Runner.yTop = 1;}break;
+      case ACT_DOWN:
+         if(bGame){Runner.xRight =  0; Runner.yTop = -1;}break;
+      case ACT_START:
+         WinPostMsg(hwndMain, WM_COMMAND, MPFROMSHORT(IDM_DIRECTION_START), MPVOID);break;
+      case ACT_STOP:
+         if(bGame){Runner.xRight = 0; Runner.yTop = 0;}break;
+      default:break;}
+}   /* End of RunnerAction */
+/**************************************************************************
  *  Name       : MainChar(HWND hwnd, MPARAM mp1, MPARAM mp2)
  *
  *  Description: ��뢠���� �� ����⨨ ������.
@@ -601,8 +639,11 @@ VOID MainCommand(HWND hwnd, MPARAM mp1, MPARAM mp2)
  *************************************************************************/
 VOID MainChar(HWND hwnd, MPARAM mp1, MPARAM mp2)
 {  USHORT usVK;
+   INT act = KmKeyAction(mp1, mp2);
 
    usVK = SHORT2FROMMP(mp2);
+
+   if(act >= 0){ RunnerAction(act); return; }
    switch(usVK){
       case VK_F2:
          mp1 = MPFROMSHORT(IDM_STYLE_2D);
@@ -618,35 +659,11 @@ VOID MainChar(HWND hwnd, MPARAM mp1, MPARAM mp2)
          mp1 = MPFROMSHORT(IDM_FILEEXIT);
          WinPostMsg(hwnd, WM_COMMAND, mp1,mp2);break;
 
-      case 0://�� ᯨ - ����৭���
-         if(bGame){//�᫨ ���� ���
-           Runner.xRight =  0;
-           Runner.yTop   =  0;}break;
+      case VK_NEWLINE://Enter always starts / pauses
+         RunnerAction(ACT_START);break;
 
-      case VK_RIGHT://���� ���ࠢ� - ���� �������
-         if(bGame){//�᫨ ���� ���
-            Runner.xRight =  1;
-            Runner.yTop   =  0;}break;
-
-      case VK_LEFT: //������ - ᪠��� ������
-         if(bGame){//�᫨ ���� ���
-            Runner.xRight = -1;
-            Runner.yTop   =  0;}break;
-
-      case VK_DOWN: //⠬ �㤥�, ⠬ ��訩 �த��
-         if(bGame){//�᫨ ���� ���
-            Runner.xRight =  0;
-            Runner.yTop   = -1;}break;
-
-      case VK_UP:   //��ᠫ�� �� ����� ᨤ��
-         if(bGame){//�᫨ ���� ���
-            Runner.xRight =  0;
-            Runner.yTop   =  1;}break;
-
-      case VK_SPACE:
-      case VK_NEWLINE:
-         mp1 = MPFROMSHORT(IDM_DIRECTION_START);
-         WinPostMsg(hwnd, WM_COMMAND, mp1,mp2);break;
+      case 0://any other character key stops the runner
+         RunnerAction(ACT_STOP);break;
 
       default:break;}
 }   /* End of MainCommand  */
@@ -668,6 +685,7 @@ VOID MainTimer(HWND hwnd, ULONG ulTIMER)
 
    hps = WinGetPS(hwnd);
    switch(ulTIMER) { BOOL bMoveRunner;
+      case IDT_JOY : KmJoyPoll(); break;
       case IDT_MOVE ://��諮 �६� ���������
          if(Field[Runner.yBottom][Runner.xLeft] == CLR_FIELD){
             Field[Runner.yBottom][Runner.xLeft] = CLR_NEW;

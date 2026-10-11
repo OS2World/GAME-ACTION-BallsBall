@@ -1,10 +1,25 @@
 -------------------------------------------------------------------------------
-BallsBall 1.4 - Source package readme
+BallsBall 1.5 - Source package readme
 -------------------------------------------------------------------------------
 
 This package is a modernized build of the open-source BallsBall /
 Vangbal source.  It is the same game, rebuilt for OS/2 and with six
 languages unified into one executable.
+
+What is new in 1.5
+------------------
+  - New Options - Key Mapping... window with Keyboard and Joystick tabs
+    (six languages).
+  - Keyboard: the four directions and Start / Pause can be mapped to any
+    key. Enter always starts / pauses; any other character key still stops
+    the runner.
+  - Joystick support through the GAME$ driver: Enable Joystick, Joystick
+    A / B, Calibrate A / Calibrate B; every action can be a joystick
+    button or a stick direction. The held state at start is ignored and a
+    change must be seen twice, so the stick cannot start the game by itself.
+  - The mappings are saved in bb.ini (section Keys).
+  - The white strip on the Key Mapping pages was removed.
+  - BLDLEVEL and About box updated to 1.5.
 
 What is new in 1.4
 ------------------
