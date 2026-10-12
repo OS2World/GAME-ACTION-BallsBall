@@ -19,6 +19,8 @@ What is new in 1.5
     change must be seen twice, so the stick cannot start the game by itself.
   - The mappings are saved in bb.ini (section Keys).
   - The white strip on the Key Mapping pages was removed.
+  - Menu shortcuts: Exit shows Ctrl+X and Ctrl+S toggles between the 2D and
+    3D style (the F2 / F3 labels are gone; the keys still work).
   - BLDLEVEL and About box updated to 1.5.
 
 What is new in 1.4

@@ -21,6 +21,9 @@ BallsBall 1.5 adds Key Mapping and joystick support:
   pause the game by itself.
 - The mappings are saved in bb.ini (section Keys).
 - The white strip on the left of the Key Mapping pages is gone.
+- Menu shortcuts: Exit shows Ctrl+X (was F3 / Esc) and Ctrl+S toggles between the
+  2D and 3D style (shown on the Style menu); the F2 / F3 labels are gone from
+  the style items (the F2 / F3 keys themselves still work).
 - BLDLEVEL and About box show version 1.5.
 
 
